@@ -15,10 +15,12 @@ class AdsController < ApplicationController
   # GET /ads/new
   def new
     @ad = Ad.new
+    @form_type = 'new'
   end
 
   # GET /ads/1/edit
   def edit
+    @form_type = 'edit'
   end
 
   # POST /ads
@@ -69,6 +71,6 @@ class AdsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ad_params
-      params.require(:ad).permit(:title, :description, :image)
+      params.require(:ad).permit(:title, :description, :image, :price)
     end
 end
