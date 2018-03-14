@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>R3adspace</title>
+    <title>R3Adspace</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,11 @@
   </head>
 
   <body>
+
     <%= yield %>
+    <footer>
+      <%= image_tag 'footer-icon.png' %>
+      <p>R3Adspace, 2018 RubyThree LLC</p>
+    </footer>
   </body>
 </html>
