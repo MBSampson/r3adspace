@@ -7,7 +7,7 @@
   margin-top: 5em;
 }
 
-.container {
+.ad-home-container {
   min-width: 150em;
   min-height: 60em;
 }
@@ -19,7 +19,7 @@
   min-width: 85em;
   max-width: 100em;
 
-  margin: 0 0 5em 15em;
+  margin: 0 0 10em 15em;
   padding: 2.5em 3em;
   float: left;
 }
@@ -68,4 +68,14 @@
 
 .ad-item-content a:hover{
   color: black;
+}
+
+.ad-show-container {
+  border: 1px solid black;
+  margin: 0 20em 5em;
+  padding: 5em;
+}
+
+.ad-show-container > .row:nth-child(even) {
+  margin-top: 5em;
 }

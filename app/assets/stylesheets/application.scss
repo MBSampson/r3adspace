@@ -28,6 +28,11 @@ html {
   position: relative;
 }
 
+body {
+  // Margin bottom to account for footer
+  margin-bottom: 10em;
+}
+
 
 
 /******   NAV STYLES  ******/
@@ -76,6 +81,11 @@ footer {
   width: 100%;
   overflow: hidden;
   height: 5em;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow:hidden;
 }
 
 footer > p {

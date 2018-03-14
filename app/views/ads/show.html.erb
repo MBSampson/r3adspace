@@ -1,19 +1,28 @@
-<p id="notice"><%= notice %></p>
+<%= render 'home_nav' %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @ad.title %>
-</p>
+<div class="container-fluid">
+  <div class="ad-show-container">
+    <div class="row">
+      <div class="col-md-2">
+        <%= image_tag @ad.image %>
+      </div>
+      <div class="col-md-10">
+        <h3><%= @ad.title %></h3>
+        <br>
+        <p>
+          <strong>Description</strong><br>
+          <%= @ad.description %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10">
 
-<p>
-  <strong>Description:</strong>
-  <%= @ad.description %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @ad.image %>
-</p>
-
-<%= link_to 'Edit', edit_ad_path(@ad) %> |
-<%= link_to 'Back', ads_path %>
+      </div>
+      <div class="col-md-2">
+        <%= link_to 'Edit', edit_ad_path(@ad), class: "btn btn-primary" %> |
+        <%= link_to 'Back', ads_path, class: "btn btn-primary"%>
+      </div>
+    </div>
+  </div>
+</div>
