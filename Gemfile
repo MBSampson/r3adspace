@@ -49,3 +49,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Use Boostrap for custom styles
+gem 'bootstrap', '~> 4.0.0'
+
+# Use jQuery as dependency for Bootstrap
+gem 'jquery-rails'

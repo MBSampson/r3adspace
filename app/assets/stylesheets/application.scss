@@ -14,12 +14,13 @@
 *= require_self
 */
 
+@import "bootstrap";
+
 *, body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-size: 12px;
-  font-family: Verdana;
 }
 
 html {
@@ -27,43 +28,47 @@ html {
   position: relative;
 }
 
-.top-home-nav {
-  box-shadow: 2px 2px 2px gray;
-  height: 12em;
+
+
+/******   NAV STYLES  ******/
+
+.navbar {
+  height: 8em;
+  padding: 2.5em;
 }
 
-.top-home-nav > img {
-  height: 7em;
-  margin: 2em;
+.nav-bar .nav-link li a {
+  font-size: 1.2em;
 }
 
-.top-home-nav > .auth-nav-component{
+.nav-item > .nav-link {
+  color: white;
+}
+
+.navbar > .navbar-brand > img {
   height: 6em;
-  width: 20em;
-  margin: 2em 3em 2em;
-  float: right;
-  border: 2px solid black;
-  text-align: center;
 }
 
-.top-home-nav > .auth-nav-component > a {
-
-  float: left;
-  width: 5em;
-  margin: 1.5em 1em;
-  padding: 0.25em 0;
-
-  font-size: 1.25em;
-
-  background-color: white;
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+  font-size: 1.5em;
 }
 
-.top-home-nav > .auth-nav-component > a:nth-child(2){
-  float: right;
+.nav-right {
+  margin: 0 1em;
 }
+
+.nav-right > .nav-item > a {
+  margin: 0 1em;
+}
+
+.nav-right > .nav-item > a:hover {
+  color: white;
+}
+
+/******   END NAV STYLES  ******/
+
+
 
 footer {
   text-align: center;
@@ -72,14 +77,7 @@ footer {
   bottom: 0;
   width: 100%;
   overflow: hidden;
-  border-top: 1px dotted black;
   height: 5em;
-}
-
-footer > img {
-  width: 4em;
-  float: right;
-  margin: 0.5em;
 }
 
 footer > p {
