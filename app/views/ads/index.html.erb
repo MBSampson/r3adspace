@@ -5,7 +5,11 @@
     <div class="ad-content">
       <% @ads.each do |ad| %>
       <div class="ad-item">
-        <%= image_tag ad.image %>
+        <%= link_to image_tag(ad.image), ad,  class: "ad-image" %>
+        <div class="ad-item-content">
+          <%= link_to ad.title, ad, class: "ad-title" %>
+          <p><%= ad.description %></p>
+        </div>
       </div>
       <% end %>
     </div>
@@ -14,6 +18,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- <p id="notice"><%= notice %></p>
 

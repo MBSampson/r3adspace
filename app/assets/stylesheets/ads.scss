@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .container-fluid {
-  min-width: 140em;
+  min-width: 150em;
   margin-top: 5em;
 }
 
 .container {
-  min-width: 140em;
+  min-width: 150em;
   min-height: 60em;
 }
 
@@ -36,11 +36,36 @@
 }
 
 .ad-item {
-  min-height: 160px;
-  padding: 10px;
+  min-height: 170px;
+  padding: 0.8em;
+  margin: 1em 0;
+  float: left;
 }
 
 .ad-item:nth-child(even){
   // Hex color stems from Bootstrap bg-light's color
   background-color: #f8f9fa;
+}
+
+.ad-image {
+  float: left;
+}
+
+.ad-item-content {
+  float: left;
+  margin-left: 1em;
+  max-width: 75em;
+}
+
+.ad-item-content p{
+  padding-top: 0.5em;
+}
+
+.ad-item-content a{
+  color: black;
+  font-size: 1.5em;
+}
+
+.ad-item-content a:hover{
+  color: black;
 }
