@@ -4,7 +4,7 @@
 
 .container-fluid {
   min-width: 140em;
-  margin: 5em 0 10em;
+  margin-top: 5em;
 }
 
 .container {
@@ -19,8 +19,8 @@
   min-width: 85em;
   max-width: 100em;
 
-  margin-left: 15em;
-  padding: 2.5em 4em;
+  margin: 0 0 5em 15em;
+  padding: 2.5em 3em;
   float: left;
 }
 
@@ -33,4 +33,14 @@
   margin-left: 5em;
   padding: 2.5em 4em;
   float: left;
+}
+
+.ad-item {
+  min-height: 160px;
+  padding: 10px;
+}
+
+.ad-item:nth-child(even){
+  // Hex color stems from Bootstrap bg-light's color
+  background-color: #f8f9fa;
 }

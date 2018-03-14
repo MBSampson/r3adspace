@@ -4,7 +4,9 @@
   <div class="container">
     <div class="ad-content">
       <% @ads.each do |ad| %>
-        <p><%= ad.title %></p>
+      <div class="ad-item">
+        <%= image_tag ad.image %>
+      </div>
       <% end %>
     </div>
     <div class="filter-content">
