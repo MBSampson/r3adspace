@@ -1,0 +1,58 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+*, body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+.top-home-nav {
+  border-bottom: 1px dotted black;
+  height: 9em;
+}
+
+.top-home-nav > img {
+  height: 7em;
+  margin: 1em;
+}
+
+.top-home-nav > .auth-nav-component{
+  height: 4em;
+  width: 16em;
+  margin: 1em 3em 1em;
+  float: right;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.top-home-nav > .auth-nav-component > a {
+
+  float: left;
+  width: 5em;
+  margin: 1.05em 1em;
+  padding: 0.25em 0;
+
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.top-home-nav > .auth-nav-component > a:nth-child(2){
+  float: right;
+}
