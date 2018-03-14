@@ -1,5 +1,18 @@
 <%= render 'home_nav' %>
 
+<div class="container-fluid">
+  <div class="container">
+    <div class="ad-content">
+      <% @ads.each do |ad| %>
+        <p><%= ad.title %></p>
+      <% end %>
+    </div>
+    <div class="filter-content">
+
+    </div>
+  </div>
+</div>
+
 <!-- <p id="notice"><%= notice %></p>
 
 <h1>Ads</h1>
