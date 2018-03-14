@@ -38,20 +38,14 @@
       </div>
     </div>
   </div>
+  <br>
+  <div class="row">
+    <div class="col-md-8">
 
-    <div class="row">
-      <div class="col-md-9">
-
-      </div>
-      <!-- <div class="col-md-3">
-        <div class="action">
-          <input class="btn btn-warning" data-disable-with="Update Ad" name="commit" type="submit" value="Update Ad">
-          <%= link_to 'Cancel', @ad, class: "btn btn-primary" %>
-        </div>
-      </div> -->
-      <div class="col-md-3">
-        <!-- <input class="btn btn-success" data-disable-with="Create Ad" name="commit" type="submit" value="Create Ad"> -->
-        <p><%= submit_form_helper(@form_type) %></p>
-      </div>
     </div>
+
+    <div class="col-md-4">
+      <p><%= form_button_helper(@form_type) %></p>
+    </div>
+  </div>
 <% end %>

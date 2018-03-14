@@ -10,6 +10,7 @@ class AdsController < ApplicationController
   # GET /ads/1
   # GET /ads/1.json
   def show
+    @form_type = 'show'
   end
 
   # GET /ads/new
