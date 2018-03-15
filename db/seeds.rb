@@ -51,3 +51,53 @@ Ad.create!(
 )
 
 puts "Generated Ad seed"
+
+Category.create!(
+  name: "appliances"
+)
+
+Category.create!(
+  name: "books"
+)
+
+Category.create!(
+  name: "phones"
+)
+
+Category.create!(
+  name: "electronics"
+)
+
+Category.create!(
+  name: "furniture"
+)
+
+Category.create!(
+  name: "general"
+)
+
+Category.create!(
+  name: "materials"
+)
+
+Category.create!(
+  name: "pets"
+)
+
+Category.create!(
+  name: "software"
+)
+
+Category.create!(
+  name: "music"
+)
+
+Category.create!(
+  name: "food"
+)
+
+Category.create!(
+  name: "services"
+)
+
+puts "Generated Category seed"

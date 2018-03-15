@@ -14,8 +14,10 @@
       </div>
       <% end %>
     </div>
-    <div class="filter-content" style="text-align: center;">
-      <p>也称乱数假文或</p>
+    <div class="filter-content">
+      <% @categories.each do |category| %>
+        <p><%= category.name %></p>
+      <% end %>
     </div>
   </div>
 </div>

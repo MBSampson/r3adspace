@@ -33,12 +33,24 @@
 .filter-content {
   background-color: white;
 
-  min-height: 60em;
+  min-height: 40em;
   width: 25em;
 
   margin-left: 5em;
-  padding: 3.5em 2em;
+  padding: 3.5em 3em;
   float: left;
+
+  text-align: center;
+}
+
+.filter-content > p {
+  font-size: 1.2em;
+  text-transform: capitalize;
+  padding: 0.25em 0;
+}
+
+.filter-content > p:nth-child(even){
+  background-color: #f8f9fa;
 }
 
 .ad-item {
