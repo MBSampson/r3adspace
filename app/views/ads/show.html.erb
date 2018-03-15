@@ -4,7 +4,9 @@
   <div class="ad-show-container">
     <div class="row">
       <div class="col-md-2">
-        <%= image_tag @ad.image %>
+        <div class="ad-image">
+          <%= image_tag @ad.image %>
+        </div>
       </div>
       <div class="col-md-10">
         <h3><%= @ad.title %></h3>
