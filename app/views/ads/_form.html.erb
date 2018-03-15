@@ -41,7 +41,10 @@
   <br>
   <div class="row">
     <div class="col-md-8">
-
+      <div class="form-group">
+        <%= form.label :category_id %>
+        <%= form.collection_select :category_id, Category.order(:name), :id, :name, include_blank: false, class: "form-control" %>
+      </div>
     </div>
 
     <div class="col-md-4">
