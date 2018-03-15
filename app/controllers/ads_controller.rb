@@ -1,11 +1,15 @@
 class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
+  before_action :set_categories, only: [:index, :filter]
 
   # GET /ads
   # GET /ads.json
   def index
     @ads = Ad.all
-    @categories = Category.all
+  end
+
+  def filter
+    @ads = Ad.where(category_id: params[:category])
   end
 
   # GET /ads/1
@@ -71,6 +75,10 @@ class AdsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_ad
       @ad = Ad.find(params[:id])
+    end
+
+    def set_categories
+      @categories = Category.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

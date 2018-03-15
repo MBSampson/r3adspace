@@ -43,15 +43,25 @@
   text-align: center;
 }
 
-.filter-content > p {
+// ------
+.filter-item {
   font-size: 1.2em;
   text-transform: capitalize;
   padding: 0.25em 0;
+  color: black;
+  display: block;
 }
 
-.filter-content > p:nth-child(even){
+.filter-item:hover{
+  color: gray;
+  text-decoration: none;
+}
+
+.filter-item:nth-child(even){
   background-color: #f8f9fa;
 }
+//-------
+
 
 .ad-item {
   min-height: 170px;
