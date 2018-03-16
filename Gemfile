@@ -55,3 +55,6 @@ gem 'bootstrap', '~> 4.0.0'
 
 # Use jQuery as dependency for Bootstrap
 gem 'jquery-rails'
+
+# Use Devise to handle User authentication
+gem 'devise'

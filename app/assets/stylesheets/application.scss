@@ -34,7 +34,32 @@ body {
   background-image: url('main-bg.png');
 }
 
+.notification-container {
+  position: absolute;
+  top: 20px;
+  right: 40%;
+  width: 20%;
+  color: limegreen;
+  font-size: 15em;
+  font-weight: bold;
+  z-index: 1;
+  text-align: center;
+}
 
+.notification-container > p {
+  padding: 0;
+  margin: 0;
+}
+
+#error_explanation{
+  background-color: #f8f9fa;
+  padding: 2.5em 2.5em;
+  margin: 1em 0;
+}
+
+#error_explanation > ul {
+  list-style: none;
+}
 
 /******   NAV STYLES  ******/
 
