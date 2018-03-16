@@ -22,8 +22,7 @@
   background-color: white;
 
   min-height: 60em;
-  min-width: 85em;
-  max-width: 100em;
+  width: 100em;
 
   margin: 0 0 10em 10em;
   padding: 2.5em 3em;
@@ -43,7 +42,6 @@
   text-align: center;
 }
 
-// ------
 .filter-item {
   font-size: 1.2em;
   text-transform: capitalize;
@@ -60,8 +58,6 @@
 .filter-item:nth-child(even){
   background-color: #f8f9fa;
 }
-//-------
-
 
 .ad-item {
   min-height: 170px;
@@ -99,6 +95,11 @@
 .ad-category {
   float: right;
   text-transform: capitalize;
+}
+
+.no-content-header {
+  text-align: center;
+  margin-top: 25%;
 }
 
 .ad-item-content a{

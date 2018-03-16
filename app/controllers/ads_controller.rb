@@ -10,6 +10,7 @@ class AdsController < ApplicationController
 
   def filter
     @ads = Ad.where(category_id: params[:category])
+    @category = Category.find(params[:category])
   end
 
   # GET /ads/1
