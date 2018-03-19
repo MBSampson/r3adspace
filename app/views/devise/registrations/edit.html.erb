@@ -8,11 +8,12 @@
       <div class="col-md-5">
         <!-- EDIT PROFILE IMAGE GOES HERE -->
         <% if @user.image %>
-          <%= image_tag @user.image %>
+          <div class="user-form-image">
+            <%= image_tag @user.image %>
+          </div>
         <% end %>
 
         <div class="form-group">
-          <%= f.label :image %><br>
           <%= f.text_field :image, id: :user_image, class: "form-text" %>
         </div>
       </div>
