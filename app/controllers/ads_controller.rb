@@ -1,6 +1,6 @@
 class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
-  before_action :set_categories, only: [:index, :filter]
+  before_action :set_categories, only: [:index, :category_filter]
 
   # GET /ads
   # GET /ads.json
@@ -8,7 +8,7 @@ class AdsController < ApplicationController
     @ads = Ad.all
   end
 
-  def filter
+  def category_filter
     @ads = Ad.where(category_id: params[:category])
     @category = Category.find(params[:category])
   end

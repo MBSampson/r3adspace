@@ -7,6 +7,9 @@
       <%= link_to ad.title, ad, class: "ad-title" %>
       <p><%= number_to_currency(ad.price) %></p>
       <p><%= ad.description %></p>
+      <% if ad.user %>
+        <p>Posted By: <%= ad.user.first_name %></p>
+      <% end %>
     </div>
   </div>
   <% end %>

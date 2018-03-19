@@ -5,7 +5,7 @@
     </div>
     <div class="filter-content">
       <% @categories.each do |category| %>
-        <%= link_to category.name, ads_filter_path(:category => category.id), class: "filter-item" %>
+        <%= link_to category.name, ads_category_filter_path(:category => category.id), class: "filter-item" %>
       <% end %>
     </div>
   </div>
