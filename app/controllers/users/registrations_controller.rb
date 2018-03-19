@@ -22,12 +22,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
    def update
-    new_params = params.require(:user).permit(:email, :username, :current_password, :password, :password_confirmation)
+    new_params = params.require(:user).permit(:first_name, :last_name, :image, :email, :current_password, :password, :password_confirmation)
     change_password = true
     if params[:user][:password].blank?
       params[:user].delete("password")
       params[:user].delete("password_confirmation")
-      new_params = params.require(:user).permit(:email, :username)
+      new_params = params.require(:user).permit(:first_name, :last_name, :image, :email)
       change_password = false
     end
 
