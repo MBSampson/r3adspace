@@ -7,8 +7,7 @@ module ApplicationHelper
       (' | ').html_safe +
       (link_to "Cancel", @ad, class: "btn btn-light")
     elsif form_type == 'new'
-      '<input class="btn btn-success" data-disable-with="Create Ad" name="commit" type="submit" value="Create Ad"> | '.html_safe +
-      (link_to "Cancel", '/', class: "btn btn-light")
+      '<input class="btn btn-success" data-disable-with="Create Ad" name="commit" type="submit" value="Verify">'.html_safe
     elsif form_type == 'show'
       (link_to "Edit", edit_ad_path(@ad), class: "btn btn-info") +
       (' | ').html_safe +
