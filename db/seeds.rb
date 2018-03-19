@@ -164,3 +164,7 @@ Ad.create!(
 
 
 puts "Generated Ad seed"
+
+user = User.create! :first_name => 'Matthew', :last_name => 'Sampson', :email => 'mbsampson89@gmail.com', :password => 'test123', :password_confirmation => 'test123'
+
+puts "Generated User"
