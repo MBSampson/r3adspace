@@ -17,3 +17,15 @@
     max-height: 100%;
   }
 }
+
+// Devise field class style override
+.field_with_errors > input {
+  width: 100%;
+  border: 2px solid #c03f30;
+}
+
+.field_with_errors > input:focus {
+  outline: none;
+  border-color: #c03f30;
+  box-shadow: 0 0 10px #c03f30;
+}
