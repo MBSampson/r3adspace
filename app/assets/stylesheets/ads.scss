@@ -17,13 +17,6 @@
   display: block;
 }
 
-#ad-creation-container {
-  display: block;
-}
-
-#ad-preview-container{
-  display: none;
-}
 
 .capitalize{
   text-transform: capitalize;
@@ -168,7 +161,7 @@
   margin-top: 5em;
 }
 
-.ad-new-edit-container, .ad-verify-container {
+.ad-new-edit-container{
   background-color: white;
   width: 90em;
   min-height: 60em;

@@ -42,6 +42,7 @@ class AdsController < ApplicationController
   def create
     @ad = Ad.new(ad_params)
     @form_type = 'new'
+    @ad.user = current_user
 
     respond_to do |format|
       if @ad.save
