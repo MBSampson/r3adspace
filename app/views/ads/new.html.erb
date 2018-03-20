@@ -1,6 +1,24 @@
 <div class="container-fluid">
-  <div class="ad-new-edit-container">
+  <div class="ad-new-edit-container" id="ad-creation-container">
     <h2>New Ad</h2>
     <%= render 'form', ad: @ad %>
+    <button class="btn btn-success" onclick="toggleAdPreview()">Toggle</button>
+  </div>
+  <div class="ad-verify-container" id="ad-preview-container">
+    <div class="row">
+      <div class="col-md-7">
+        <h3 id="ad-verify-title">Coffee Table</h3>
+        <br>
+        <p><strong id="ad-verify-price">$34.99</strong></p>
+        <br>
+        <p>Nam odio odio, volutpat eu metus eget, pretium commodo purus. Suspendisse nec erat tellus. In ac est congue, congue felis vitae, molestie mauris. Suspendisse mollis non metus nec faucibus. Mauris tincidunt enim eros, ac pharetra odio viverra sed. Nullam sit amet felis mauris. Curabitur quis feugiat velit. Suspendisse ac augue semper, viverra nisi gravida, lobortis metus. Integer ullamcorper ullamcorper ante consectetur volutpat. Curabitur mollis sem eget fringilla pretium. Proin risus massa, feugiat sit amet tincidunt a, sollicitudin eget tellus. Nam at scelerisque dolor. Curabitur pulvinar tellus ac massa fringilla, at luctus mauris fringilla. Phasellus consectetur nunc nec sem aliquet suscipit. Integer nec porttitor magna. Ut ac felis in lectus sagittis tempus et non lorem.</p>
+        <img src="http://via.placeholder.com/400x250">
+      </div>
+      <div class="col-md-5">
+
+      </div>
+    </div>
+    <br>
+    <button class="btn btn-success" onclick="toggleAdPreview()">Toggle</button>
   </div>
 </div>

@@ -8,6 +8,29 @@
   padding: 2.5px;
 }
 
+#ad_image {
+  visibility: hidden;
+}
+
+#ad-image-btn {
+  margin: 37.5% auto;
+  display: block;
+}
+
+#ad-creation-container {
+  display: block;
+}
+
+#ad-preview-container{
+  display: none;
+}
+
+.capitalize{
+  text-transform: capitalize;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
 .form-group > select {
   display: block;
   padding: .375rem .75rem;
@@ -92,6 +115,10 @@
   background-color: #f8f9fa;
 }
 
+.ad-title {
+  font-size: 1.5em;
+}
+
 .ad-image {
   float: left;
   width: 150px;
@@ -125,7 +152,6 @@
 
 .ad-item-content a{
   color: black;
-  font-size: 1.5em;
 }
 
 .ad-item-content a:hover{
@@ -142,11 +168,13 @@
   margin-top: 5em;
 }
 
-.ad-new-edit-container {
+.ad-new-edit-container, .ad-verify-container {
   background-color: white;
   width: 90em;
+  min-height: 60em;
   margin: 0 auto;
   padding: 5em;
+  positon: relative;
 }
 
 .ad-form-image{
@@ -179,13 +207,4 @@
 
 .test{
   margin-top: 3.8em;
-}
-
-#ad_image {
-  visibility: hidden;
-}
-
-#ad-image-btn {
-  margin: 37.5% auto;
-  display: block;
 }

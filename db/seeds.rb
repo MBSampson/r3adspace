@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.create! :first_name => 'Matthew', :last_name => 'Sampson', :email => 'mbsampson89@gmail.com', :password => 'test123', :password_confirmation => 'test123'
+user = User.create! :first_name => 'Jennifer', :last_name => 'Hayden', :email => 'jHay@test.com', :password => 'test123', :password_confirmation => 'test123'
 
 puts "Generated User"
 
@@ -76,7 +77,7 @@ In eu dolor non eros tincidunt efficitur ut eu velit. Vestibulum fermentum bland
   price: 100.99,
   image: "http://via.placeholder.com/250x250",
   category_id: 1,
-  user_id: 1
+  user_id: 2
 )
 
 Ad.create!(
@@ -94,7 +95,7 @@ Ad.create!(
   price: 13.99,
   image: "http://via.placeholder.com/500x150",
   category_id: 10,
-  user_id: 1
+  user_id: 2
 )
 
 Ad.create!(
@@ -113,7 +114,7 @@ In eu dolor non eros tincidunt efficitur ut eu velit. Vestibulum fermentum bland
   price: 64.99,
   image: "http://via.placeholder.com/125x450",
   category_id: 3,
-  user_id: 1
+  user_id: 2
 )
 
 Ad.create!(
@@ -140,7 +141,7 @@ Ad.create!(
   price: 56.49,
   image: "http://via.placeholder.com/150x150",
   category_id: 4,
-  user_id: 1
+  user_id: 2
 )
 
 Ad.create!(

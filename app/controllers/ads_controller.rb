@@ -1,6 +1,7 @@
 class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
   before_action :set_categories, only: [:index, :category_filter]
+  before_action :set_users, only: [:poster_filter]
 
   # GET /ads
   # GET /ads.json
@@ -12,6 +13,12 @@ class AdsController < ApplicationController
     @ads = Ad.where(category_id: params[:category])
     @category = Category.find(params[:category])
   end
+
+  # Filters by the ad's poster
+  def poster_filter
+    @ads = Ad.where(user_id: params[:poster])
+  end
+
 
   # GET /ads/1
   # GET /ads/1.json
@@ -82,8 +89,12 @@ class AdsController < ApplicationController
       @categories = Category.all
     end
 
+    def set_users
+      @users = User.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def ad_params
-      params.require(:ad).permit(:title, :description, :image, :price, :category_id)
+      params.require(:ad).permit(:title, :description, :image, :price, :category_id, :user_id)
     end
 end
