@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20180319224902) do
     t.float "price"
     t.integer "category_id"
     t.bigint "user_id"
+    t.string "published"
     t.index ["category_id"], name: "index_ads_on_category_id"
     t.index ["user_id"], name: "index_ads_on_user_id"
   end

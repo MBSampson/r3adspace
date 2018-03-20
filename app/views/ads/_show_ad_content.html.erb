@@ -1,17 +1,18 @@
 <% if @ads.count != 0 %>
   <% @ads.each do |ad| %>
-  <div class="ad-item">
-    <%= link_to image_tag(ad.image), ad,  class: "ad-image" %>
-    <div class="ad-item-content">
-      <p class="ad-category"><%= ad.category.name %></p>
-      <%= link_to ad.title, ad, class: "ad-title" %>
-      <p><%= number_to_currency(ad.price) %></p>
-      <p><%= ad.description %></p>
-      <% if ad.user %>
-        <p>Posted By: <%= link_to ad.user.first_name + " " + ad.user.last_name, ads_poster_filter_path(:poster => ad.user.id) %></p>
-      <% end %>
-    </div>
-  </div>
+    <!--  Published? -->
+      <div class="ad-item">
+        <%= link_to image_tag(ad.image), ad,  class: "ad-image" %>
+        <div class="ad-item-content">
+          <p class="ad-category"><%= ad.category.name %></p>
+          <%= link_to ad.title, ad, class: "ad-title" %>
+          <p><%= number_to_currency(ad.price) %></p>
+          <p><%= ad.description %></p>
+          <% if ad.user %>
+            <p>Posted By: <%= link_to ad.user.first_name + " " + ad.user.last_name, ads_poster_filter_path(:poster => ad.user.id) %></p>
+          <% end %>
+        </div>
+      </div>
   <% end %>
 <% else %>
   <h3 class="no-content-header">There are no ads in the <%= @category.name.capitalize %> category.</h3>

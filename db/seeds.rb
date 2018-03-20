@@ -67,7 +67,8 @@ Ad.create!(
   price: 25.00,
   image: "http://via.placeholder.com/150x150",
   category_id: 1,
-  user_id: 1
+  user_id: 1,
+  published: "published"
 )
 
 Ad.create!(

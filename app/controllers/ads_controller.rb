@@ -1,5 +1,5 @@
 class AdsController < ApplicationController
-  before_action :set_ad, only: [:show, :edit, :update, :destroy]
+  before_action :set_ad, only: [:show, :edit, :update, :destroy, :toggle_published]
   before_action :set_categories, only: [:index, :category_filter]
   before_action :set_users, only: [:poster_filter]
 
@@ -19,11 +19,19 @@ class AdsController < ApplicationController
     @ads = Ad.where(user_id: params[:poster])
   end
 
-
   # GET /ads/1
   # GET /ads/1.json
   def show
     @form_type = 'show'
+  end
+
+  def toggle_published
+    if @ad.published == "published"
+      @ad.update!(published: "draft")
+    else
+      @ad.update!(published: "published") 
+    end
+    redirect_to ad_path, notice: "Ad has been updated."
   end
 
   # GET /ads/new

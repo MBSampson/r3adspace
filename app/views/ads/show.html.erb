@@ -1,40 +1,72 @@
 <div class="container-fluid">
   <div class="ad-show-container">
-    <div class="row">
-      <div class="col-md-2">
-        <div class="ad-image">
-          <%= image_tag @ad.image %>
+
+    <% if !current_user || current_user.id != @ad.user_id %>
+      <div class="row">
+        <div class="col-md-2">
+          <div class="ad-image">
+            <%= image_tag @ad.image %>
+          </div>
+        </div>
+        <div class="col-md-10">
+          <h3><%= @ad.title %></h3>
+          <br>
+          <p>
+            <strong>Price</strong><br>
+            <%= number_to_currency(@ad.price) %>
+          </p>
+          <p>
+            <strong>Category</strong><br>
+            <%= @ad.category.name %>
+          </p>
+          <p>
+            <strong>Description</strong><br>
+            <%= @ad.description %>
+          </p>
+          <p>
+            <strong>Poster</strong><br>
+            <!--  Following this link will eventually bring the user to a page that filters by the ad's author when clicked. -->
+            <%= link_to @ad.user.first_name + " " + @ad.user.last_name, ads_poster_filter_path(:poster => @ad.user.id) %>
+          </p>
         </div>
       </div>
-      <div class="col-md-10">
-        <h3><%= @ad.title %></h3>
-        <br>
-        <p>
-          <strong>Price</strong><br>
-          <%= number_to_currency(@ad.price) %>
-        </p>
-        <p>
-          <strong>Category</strong><br>
-          <%= @ad.category.name %>
-        </p>
-        <p>
-          <strong>Description</strong><br>
-          <%= @ad.description %>
-        </p>
-        <p>
-          <strong>Poster</strong><br>
-          <!--  Following this link will eventually bring the user to a page that filters by the ad's author when clicked. -->
-          <%= link_to @ad.user.first_name + " " + @ad.user.last_name, ads_poster_filter_path(:poster => @ad.user.id) %>
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-10">
+      <div class="row">
+        <div class="col-md-10">
 
+        </div>
+        <div class="col-md-2">
+          <%= form_button_helper(@form_type) %>
+        </div>
       </div>
-      <div class="col-md-2">
-        <%= form_button_helper(@form_type) %>
+    <% else %>
+      <% if current_user.id == @ad.user_id %>
+      <div class="row">
+        <div class="col-md-7">
+          <h2><%= @ad.title %></h2>
+          <br>
+          <p><%= number_to_currency(@ad.price) %></p>
+          <br>
+          <p><%= @ad.description %></p>
+          <br>
+          <p>Posted by: <%= @ad.user.first_name + " " + @ad.user.last_name %></p>
+          <br>
+          <div class="ad-show-image">
+            <%= image_tag @ad.image %>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <p><%= @ad.published %></p>
+        </div>
+      <div class="row">
+        <div class="col-md-10">
+
+        </div>
+        <div class="col-md-2">
+          <%= form_button_helper(@form_type) %>
+          <p><strong>Status:</strong> <%= link_to @ad.published, toggle_published_ad_path(@ad.id) %></p>
+        </div>
       </div>
-    </div>
+      <% end %>
+    <% end %>
   </div>
 </div>

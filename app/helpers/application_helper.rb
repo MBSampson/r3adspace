@@ -5,8 +5,7 @@ module ApplicationHelper
       (link_to "Delete Ad", @ad, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger ad-action-btn") +
       ('<input class="btn btn-info ad-action-btn" data-disable-with="Update Ad" name="commit" type="submit" value="Update Ad">'.html_safe)
     elsif form_type == 'new'
-      '<button class="btn btn-success" onclick="toggleAdPreview()">Verify</button>'.html_safe
-      # <input class="btn btn-success" data-disable-with="Create Ad" name="commit" type="submit" value="Verify">
+      ('<input class="btn btn-success" data-disable-with="Create Ad" name="commit" type="submit" value="Verify">').html_safe 
     elsif form_type == 'show'
       (link_to "Back", ads_path, class: "btn btn-primary ad-action-btn") +
       (link_to "Edit", edit_ad_path(@ad), class: "btn btn-info ad-action-btn")
