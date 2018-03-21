@@ -10,7 +10,7 @@ class AdsController < ApplicationController
   end
 
   def category_filter
-    @ads = Ad.where(category_id: params[:category])
+    @ads = Ad.where(category_id: params[:category], published: "published")
     @category = Category.find(params[:category])
   end
 

@@ -194,6 +194,8 @@
   }
 }
 
+
+
 .light-box{
   padding: 1em 2em;
 }
@@ -201,6 +203,10 @@
 .ad-published-status {
   text-transform: capitalize;
   font-weight: bold;
+}
+
+.ad-published-status span {
+  float: right;
 }
 
 .ad-action-btn {

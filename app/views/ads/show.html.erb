@@ -1,76 +1,42 @@
 <div class="container-fluid">
   <div class="ad-show-container">
-    <% if !current_user || current_user.id != @ad.user_id %>
-      <div class="row">
-        <div class="col-md-2">
-          <div class="ad-image">
-            <%= image_tag @ad.image %>
-          </div>
-        </div>
-        <div class="col-md-10">
-          <h3><%= @ad.title %></h3>
-          <br>
-          <p>
-            <strong>Price</strong><br>
-            <%= number_to_currency(@ad.price) %>
-          </p>
-          <p>
-            <strong>Category</strong><br>
-            <%= @ad.category.name %>
-          </p>
-          <p>
-            <strong>Description</strong><br>
-            <%= @ad.description %>
-          </p>
-          <p>
-            <strong>Poster</strong><br>
-            <!--  Following this link will eventually bring the user to a page that filters by the ad's author when clicked. -->
-            <%= link_to @ad.user.first_name + " " + @ad.user.last_name, ads_poster_filter_path(:poster => @ad.user.id) %>
-          </p>
+    <div class="row">
+      <div class="col-md-7">
+        <h2><%= @ad.title %></h2>
+        <br>
+        <p><%= number_to_currency(@ad.price) %></p>
+        <br>
+        <p><%= @ad.description %></p>
+        <br>
+        <p>Visibility: <span class="ad-published-status"><%= @ad.published %></span> <span class="light-box">Posted by: <%= @ad.user.first_name + " " + @ad.user.last_name %></span> Category: <span class="capitalize"><%= @ad.category.name %></span></p>
+        <br>
+        <div class="ad-show-image">
+          <%= image_tag @ad.image %>
         </div>
       </div>
+      <div class="col-md-5">
 
-      <div class="row">
-        <div class="col-md-10">
-
-        </div>
-        <div class="col-md-2">
-          <%= form_button_helper(@form_type) %>
-        </div>
       </div>
-    <% else %>
-      <% if current_user.id == @ad.user_id %>
-      <div class="row">
-        <div class="col-md-7">
-          <h2><%= @ad.title %></h2>
-          <br>
-          <p><%= number_to_currency(@ad.price) %></p>
-          <br>
-          <p><%= @ad.description %></p>
-          <br>
-          <p>Visibility: <span class="ad-published-status"><%= @ad.published %></span> <span class="light-box">Posted by: <%= @ad.user.first_name + " " + @ad.user.last_name %></span> Category: <span class="capitalize"><%= @ad.category.name %></span></p>
-          <br>
-          <div class="ad-show-image">
-            <%= image_tag @ad.image %>
-          </div>
-        </div>
-        <div class="col-md-5">
-
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-10">
-          <%= form_button_helper(@form_type) %>
-        </div>
-        <div class="col-md-2">
-          <% if @ad.published == "draft" %>
-            <%= link_to "Post", toggle_published_ad_path(@ad.id), class: "btn btn-success"%>
-          <% else %>
-            <%= link_to "Hide", toggle_published_ad_path(@ad.id), class: "btn btn-danger"%>
+    </div>
+    <div class="row">
+      <div class="col-md-10">
+        <% if user_signed_in? %>
+          <% if current_user.id == @ad.user_id %>
+            <%= form_button_helper(@form_type) %>
           <% end %>
-        </div>
+        <% end %>
       </div>
-      <% end %>
-    <% end %>
+      <div class="col-md-2">
+        <% if user_signed_in? %>
+          <% if current_user.id == @ad.user_id %>
+            <% if @ad.published == "draft" %>
+              <%= link_to "Post", toggle_published_ad_path(@ad.id), class: "btn btn-success"%>
+            <% else %>
+              <%= link_to "Hide", toggle_published_ad_path(@ad.id), class: "btn btn-danger"%>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
