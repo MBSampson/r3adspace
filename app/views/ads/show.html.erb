@@ -1,6 +1,5 @@
 <div class="container-fluid">
   <div class="ad-show-container">
-
     <% if !current_user || current_user.id != @ad.user_id %>
       <div class="row">
         <div class="col-md-2">
@@ -30,6 +29,7 @@
           </p>
         </div>
       </div>
+
       <div class="row">
         <div class="col-md-10">
 
@@ -50,20 +50,26 @@
           <br>
           <p>Posted by: <%= @ad.user.first_name + " " + @ad.user.last_name %></p>
           <br>
+          <p>Visibility: <span class="ad-published-status"><%= @ad.published %></span></p>
+          <br>
           <div class="ad-show-image">
             <%= image_tag @ad.image %>
           </div>
         </div>
         <div class="col-md-5">
-          <p><%= @ad.published %></p>
-        </div>
-      <div class="row">
-        <div class="col-md-10">
 
         </div>
-        <div class="col-md-2">
+      </div>
+      <div class="row">
+        <div class="col-md-10">
           <%= form_button_helper(@form_type) %>
-          <p><strong>Status:</strong> <%= link_to @ad.published, toggle_published_ad_path(@ad.id) %></p>
+        </div>
+        <div class="col-md-2">
+          <% if @ad.published == "draft" %>
+            <%= link_to "Post", toggle_published_ad_path(@ad.id), class: "btn btn-success"%>
+          <% else %>
+            <%= link_to "Hide", toggle_published_ad_path(@ad.id), class: "btn btn-danger"%>
+          <% end %>
         </div>
       </div>
       <% end %>

@@ -194,6 +194,11 @@
   }
 }
 
+.ad-published-status {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 .ad-action-btn {
   margin-left: 1em;
 }
@@ -206,8 +211,4 @@
   border-radius: 80px;
   z-index: 1;
   transform: translateY(-1em);
-}
-
-.test{
-  margin-top: 3.8em;
 }

@@ -28,10 +28,11 @@ class AdsController < ApplicationController
   def toggle_published
     if @ad.published == "published"
       @ad.update!(published: "draft")
+      redirect_to ad_path, notice: "Your ad is now hidden."
     else
-      @ad.update!(published: "published") 
+      @ad.update!(published: "published")
+      redirect_to ads_url, notice: "Your ad has been posted!"
     end
-    redirect_to ad_path, notice: "Ad has been updated."
   end
 
   # GET /ads/new
