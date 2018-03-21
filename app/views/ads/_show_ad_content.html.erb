@@ -7,7 +7,7 @@
         <%= link_to ad.title, ad, class: "ad-title" %>
         <p><%= number_to_currency(ad.price) %></p>
         <p><%= ad.description %></p>
-        <%= showAdPublishedStatus(@page, ad) %>
+        <%= show_ad_published_status(@page, ad) %>
         <p>Posted By: <%= link_to ad.user.first_name + " " + ad.user.last_name, ads_poster_filter_path(:poster => ad.user.id) %></p>
       </div>
     </div>
