@@ -123,7 +123,7 @@
   width: 400px;
 }
 
-.ad-show-image {
+.ad-show-image img {
   max-width: 100%;
   max-height: 100%;
 }
@@ -194,8 +194,12 @@
   }
 }
 
+.light-box{
+  padding: 1em 2em;
+}
+
 .ad-published-status {
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: bold;
 }
 
@@ -210,5 +214,4 @@
   margin: 0 auto;
   border-radius: 80px;
   z-index: 1;
-  transform: translateY(-1em);
 }
