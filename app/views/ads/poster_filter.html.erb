@@ -1,8 +1,16 @@
 <div class="container-fluid">
   <div class="ad-home-container">
     <div class="ad-content">
-      <h3>Displaying all ads by <%= @ads.first.user.first_name %> <%= @ads.first.user.last_name %></h3>
-      <%= render 'show_ad_content' %>
+      <!--  Handle when a user has no Ads -->
+      <% if @ads.count == 0 %>
+        <div class="no-content-container">
+          <h3>You have no listed ads</h3>
+          <p>Want to create an ad? Click <%= link_to "here", new_ad_path %>.</p>
+        </div>
+      <% else %>
+        <h3>Displaying all ads by <%= @ads.first.user.first_name %> <%= @ads.first.user.last_name %></h3>
+        <%= render 'show_ad_content' %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -7,13 +7,13 @@
         <%= link_to ad.title, ad, class: "ad-title" %>
         <p><%= number_to_currency(ad.price) %></p>
         <p><%= ad.description %></p>
-        <div class="ad-published-status">
-          <span><%= ad.published %></span>
-        </div>
+        <%= showAdPublishedStatus(@page, ad) %>
         <p>Posted By: <%= link_to ad.user.first_name + " " + ad.user.last_name, ads_poster_filter_path(:poster => ad.user.id) %></p>
       </div>
     </div>
   <% end %>
 <% else %>
-  <h3 class="no-content-header">There are no ads in the <%= @category.name.capitalize %> category.</h3>
+  <div class="no-content-container">
+    <h3>There are no ads in the <%= @category.name.capitalize %> category.</h3>
+  </div>
 <% end %>

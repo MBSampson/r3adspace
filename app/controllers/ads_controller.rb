@@ -6,23 +6,27 @@ class AdsController < ApplicationController
   # GET /ads
   # GET /ads.json
   def index
-    @ads = Ad.all
+    @ads = Ad.where(published: "published")
+    @page = __method__.to_s
   end
 
   def category_filter
     @ads = Ad.where(category_id: params[:category], published: "published")
     @category = Category.find(params[:category])
+    @page = __method__.to_s
   end
 
   # Filters by the ad's poster
   def poster_filter
     @ads = Ad.where(user_id: params[:poster])
+    @page = __method__.to_s
   end
 
   # GET /ads/1
   # GET /ads/1.json
   def show
     @form_type = 'show'
+    @page = __method__.to_s
   end
 
   def toggle_published
@@ -107,4 +111,5 @@ class AdsController < ApplicationController
     def ad_params
       params.require(:ad).permit(:title, :description, :image, :price, :category_id, :user_id)
     end
+
 end
