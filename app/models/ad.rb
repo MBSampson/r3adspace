@@ -8,10 +8,7 @@ class Ad < ApplicationRecord
             numericality: true,
             numericality: { :greater_than_or_equal_to => 0 }
 
-  validates_format_of :image,
-            with: /^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/,
-            message: "must be a URL link",
-            multiline: true
+  validates :image, :url => true
 
   def set_defaults
     self.published ||= "draft"

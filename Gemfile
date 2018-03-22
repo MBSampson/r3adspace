@@ -59,3 +59,6 @@ gem 'jquery-rails'
 
 # Use Devise to handle User authentication
 gem 'devise'
+
+# Use to validate URLs 
+gem 'valid_url'
