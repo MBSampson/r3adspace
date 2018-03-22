@@ -16,7 +16,7 @@ module ApplicationHelper
 
   def login_container_helper
     if current_user
-      if current_page?(edit_user_registration_path)
+      if current_page?(edit_user_registration_path) || current_page?(new_ad_path)
         (link_to "My Ads", ads_poster_filter_path(:poster => @user.id), class: 'nav-link') +
         (link_to "Profile", edit_user_registration_path, class: 'nav-link') +
         (link_to "New Ad", new_ad_path, class: 'nav-link')

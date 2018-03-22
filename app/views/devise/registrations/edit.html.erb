@@ -12,6 +12,7 @@
             <%= image_tag @user.image %>
           </div>
           <div class="form-group">
+            <%= f.label :image %>
             <%= f.text_field :image, id: :user_image, class: "form-text" %>
           </div>
         <% else  %>

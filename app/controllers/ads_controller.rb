@@ -43,6 +43,7 @@ class AdsController < ApplicationController
   # GET /ads/new
   def new
     @ad = Ad.new
+    @user = current_user
     @form_type = 'new'
   end
 
