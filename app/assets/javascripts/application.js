@@ -19,5 +19,7 @@
 
 function displayImageField(){
   document.getElementById("ad_image").style.visibility = "visible";
-  document.getElementById("ad-image-btn").style.visibility = "hidden";
+  if (document.getElementById("ad-image-btn")) {
+    document.getElementById("ad-image-btn").style.visibility = "hidden";
+  }
 }
