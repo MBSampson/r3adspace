@@ -14,15 +14,17 @@ module ApplicationHelper
     end
   end
 
-  def login_container_helper
-    if current_user
-      if current_page?(edit_user_registration_path) || current_page?(new_ad_path)
-        (link_to "My Ads", ads_poster_filter_path(:poster => @user.id), class: 'nav-link') +
+  def display_nav_items_helper
+    if user_signed_in?
+      if @page == "index" || @page == "category_filter"
         (link_to "Profile", edit_user_registration_path, class: 'nav-link') +
-        (link_to "New Ad", new_ad_path, class: 'nav-link')
+        (link_to "Logout", destroy_user_session_path, method: :delete, class: 'nav-link')
       else
         (link_to "Profile", edit_user_registration_path, class: 'nav-link') +
         (link_to "Logout", destroy_user_session_path, method: :delete, class: 'nav-link')
+        (link_to "My Ads", ads_poster_filter_path(:poster => @user.id), class: 'nav-link') +
+        (link_to "Profile", edit_user_registration_path, class: 'nav-link') +
+        (link_to "New Ad", new_ad_path, class: 'nav-link')
       end
     else
       (link_to "Sign Up", new_user_registration_path, class: 'nav-link') +

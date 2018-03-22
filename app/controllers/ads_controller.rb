@@ -3,6 +3,7 @@ class AdsController < ApplicationController
   before_action :set_categories, only: [:index, :category_filter]
   before_action :set_users, only: [:poster_filter]
   before_action :authenticate_user!, only: [:poster_filter, :edit, :new, :create, :update]
+  before_action :set_current_user, except: [:destroy, :update, :create]
 
   # GET /ads
   # GET /ads.json
@@ -43,7 +44,6 @@ class AdsController < ApplicationController
   # GET /ads/new
   def new
     @ad = Ad.new
-    @user = current_user
     @form_type = 'new'
   end
 
@@ -107,6 +107,10 @@ class AdsController < ApplicationController
 
     def set_users
       @users = User.all
+    end
+
+    def set_current_user
+      @user = current_user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
