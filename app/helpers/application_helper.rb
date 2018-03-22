@@ -20,14 +20,9 @@ module ApplicationHelper
         (link_to "Profile", edit_user_registration_path, class: 'nav-link') +
         (link_to "Logout", destroy_user_session_path, method: :delete, class: 'nav-link')
       else
-        if @page == "edit" &&  @user.id == @ad.id || @page == "show" && @user.id == @ad.id
-          (link_to "My Ads", ads_poster_filter_path(:poster => @user.id), class: 'nav-link') +
-          (link_to "Profile", edit_user_registration_path, class: 'nav-link') +
-          (link_to "New Ad", new_ad_path, class: 'nav-link')
-        else
-          (link_to "Sign Up", new_user_registration_path, class: 'nav-link') +
-          (link_to "Login", new_user_session_path, class: 'nav-link')
-        end
+        (link_to "My Ads", ads_poster_filter_path(:poster => @user.id), class: 'nav-link') +
+        (link_to "Profile", edit_user_registration_path, class: 'nav-link') +
+        (link_to "New Ad", new_ad_path, class: 'nav-link')
       end
     else
       (link_to "Sign Up", new_user_registration_path, class: 'nav-link') +

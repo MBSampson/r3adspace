@@ -19,6 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def edit
     super
     @user = current_user
+    @page = __method__.to_s
   end
 
   # PUT /resource
