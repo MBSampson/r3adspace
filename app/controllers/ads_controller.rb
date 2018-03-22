@@ -2,6 +2,7 @@ class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :edit, :update, :destroy, :toggle_published]
   before_action :set_categories, only: [:index, :category_filter]
   before_action :set_users, only: [:poster_filter]
+  before_action :authenticate_user!, only: [:poster_filter, :edit, :new, :create, :update]
 
   # GET /ads
   # GET /ads.json
