@@ -29,4 +29,14 @@ module AdsHelper
     end
   end
 
+  def allow_ad_edit(ad)
+    if current_user.id != ad.user_id
+      content_tag :div, :class => "no-content-container" do
+        content_tag :h2, "You do not have permission to edit this ad."
+      end
+    else
+      render 'form', ad: ad
+    end
+  end
+
 end
