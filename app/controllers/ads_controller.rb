@@ -50,6 +50,7 @@ class AdsController < ApplicationController
   # GET /ads/1/edit
   def edit
     @form_type = 'edit'
+    @page = __method__.to_s
   end
 
   # POST /ads
