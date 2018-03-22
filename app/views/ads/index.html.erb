@@ -5,9 +5,7 @@
       <%= render 'show_ad_content' %>
     </div>
     <div class="filter-content">
-      <% @categories.each do |category| %>
-        <%= link_to category.name, ads_category_filter_path(:category => category.id), class: "filter-item" %>
-      <% end %>
+      <%= render 'show_filter_content' %>
     </div>
   </div>
 </div>
