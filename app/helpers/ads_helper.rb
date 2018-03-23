@@ -13,9 +13,9 @@ module AdsHelper
     if user_signed_in?
       if current_user.id == ad.user_id
         if ad.published == "draft"
-          link_to "Post", toggle_published_ad_path(ad.id), class: "btn btn-success"
+          link_to "Post", toggle_published_ad_path(ad.id), class: "btn btn-success float-right"
         else
-          link_to "Hide", toggle_published_ad_path(ad.id), class: "btn btn-danger"
+          link_to "Hide", toggle_published_ad_path(ad.id), class: "btn btn-danger float-right"
         end
       end
     end

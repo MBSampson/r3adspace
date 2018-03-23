@@ -11,5 +11,6 @@ class Ad < ApplicationRecord
 
   def set_defaults
     self.published ||= "draft"
+    self.image ||= "http://via.placeholder.com/150x150"
   end
 end
