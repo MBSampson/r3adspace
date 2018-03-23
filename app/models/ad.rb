@@ -5,7 +5,6 @@ class Ad < ApplicationRecord
 
   validates_presence_of :title, :description, :price, :category_id
   validates :price,
-            numericality: true,
             numericality: { :greater_than_or_equal_to => 0 }
 
   validates :image, :url => true
