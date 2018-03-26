@@ -60,5 +60,8 @@ gem 'jquery-rails'
 # Use Devise to handle User authentication
 gem 'devise'
 
-# Use to validate URLs 
+# Use to validate URLs
 gem 'valid_url'
+
+# Use Paperclip to handle image uploads
+gem "paperclip", "~> 6.0.0"
