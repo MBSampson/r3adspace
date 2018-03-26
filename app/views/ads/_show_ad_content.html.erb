@@ -1,7 +1,10 @@
 <% if @ads.count != 0 %>
   <% @ads.each do |ad| %>
     <div class="ad-item">
-      <%= link_to image_tag(ad.image), ad,  class: "ad-image" %>
+      <!-- SHOW AD PHOTO HERE  -->
+      <div class="ad-photo">
+        <%= image_tag ad.photo %>
+      </div>
       <div class="ad-item-content">
         <p class="ad-category"><%= ad.category.name %></p>
         <%= link_to ad.title, ad, class: "ad-title" %>

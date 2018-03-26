@@ -11,10 +11,7 @@ class Ad < ApplicationRecord
   validates :price,
             numericality: { :greater_than_or_equal_to => 0 }
 
-  validates :image, :url => true
-
   def set_defaults
     self.published ||= "draft"
-    self.image ||= "http://via.placeholder.com/150x150"
   end
 end

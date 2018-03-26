@@ -115,25 +115,27 @@
   font-size: 1.5em;
 }
 
-.ad-image {
+.ad-photo {
   float: left;
   width: 150px;
   height: 150px;
 }
 
-.ad-show-image {
+.ad-show-photo {
   height: 250px;
   width: 400px;
 }
 
-.ad-show-image img {
+.ad-show-photo img {
   max-width: 100%;
   max-height: 100%;
 }
 
-.ad-image img {
+.ad-photo img {
   max-width: 100%;
   max-height: 100%;
+  margin: 0 auto;
+  display: block;
 }
 
 .ad-item-content {
@@ -229,11 +231,13 @@
   margin-left: 1em;
 }
 
-.placeholder-form-image {
+.placeholder-form-photo {
   width: 150px;
   height: 150px;
-  border: 1px solid black;
   margin: 0 auto;
-  border-radius: 80px;
-  z-index: 1;
+}
+
+.placeholder-form-photo img {
+  max-width: 100%;
+  max-height: 100%;
 }

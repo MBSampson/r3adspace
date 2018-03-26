@@ -24,12 +24,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
    def update
-    new_params = params.require(:user).permit(:avatar, :first_name, :last_name, :image, :email, :current_password, :password, :password_confirmation)
+    new_params = params.require(:user).permit(:avatar, :first_name, :last_name, :email, :current_password, :password, :password_confirmation)
     change_password = true
     if params[:user][:password].blank?
       params[:user].delete("password")
       params[:user].delete("password_confirmation")
-      new_params = params.require(:user).permit(:avatar, :first_name, :last_name, :image, :email)
+      new_params = params.require(:user).permit(:avatar, :first_name, :last_name, :email)
       change_password = false
     end
 
@@ -69,12 +69,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     # If you have extra params to permit, append them to the sanitizer.
     def configure_sign_up_params
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :image])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
     end
 
     # If you have extra params to permit, append them to the sanitizer.
     def configure_account_update_params
-      devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :image])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name])
     end
 
     def update_resource(resource, params)

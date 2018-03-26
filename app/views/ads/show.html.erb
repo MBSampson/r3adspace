@@ -10,7 +10,7 @@
         <br>
         <p>Visibility: <span class="ad-published-status"><%= @ad.published %></span> <span class="light-box">Posted by: <%= @ad.user.first_name + " " + @ad.user.last_name %></span> Category: <span class="capitalize"><%= @ad.category.name %></span></p>
         <br>
-        <div class="ad-show-image">
+        <div class="ad-show-photo">
           <%= image_tag @ad.photo %>
         </div>
       </div>

@@ -16,10 +16,3 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
-
-function displayImageField(){
-  document.getElementById("ad_image").style.visibility = "visible";
-  if (document.getElementById("ad-image-btn")) {
-    document.getElementById("ad-image-btn").style.visibility = "hidden";
-  }
-}
