@@ -24,10 +24,6 @@ class AdsController < ApplicationController
     @page = __method__.to_s
   end
 
-  def purchase_ad
-    @ad = Ad.find(params[:ad_id])
-  end
-
   # GET /ads/1
   # GET /ads/1.json
   def show

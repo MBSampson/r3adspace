@@ -62,3 +62,6 @@ gem 'devise'
 
 # Use Paperclip to handle image uploads
 gem "paperclip", "~> 6.0.0"
+
+# Use CCValidations to handle user payments for ads
+gem 'credit_card_validations'
