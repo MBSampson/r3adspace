@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="container ad-content-container">
+  <div class="container ad-content-container ad-show-container">
     <h2><%= @ad.title %></h2>
     <br>
     <p><%= number_to_currency(@ad.price) %></p>
@@ -7,12 +7,13 @@
     <p><%= simple_format(@ad.description) %></p>
     <br>
     <p>Visibility: <span class="ad-published-status"><%= @ad.published %></span> <span class="ad-attribute-separator">Posted by: <%= @ad.user.first_name + " " + @ad.user.last_name %></span> Category: <span class="capitalize"><%= @ad.category.name %></span></p>
-    <%= show_buy_button(@ad) %>
     <br>
     <div class="ad-show-photo">
       <%= image_tag @ad.photo %>
     </div>
+    <br>
     <%= display_edit_btns(@ad) %>
     <%= display_published_toggle_btns(@ad) %>
+    <%= show_buy_button(@ad) %>
   </div>
 </div>
