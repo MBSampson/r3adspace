@@ -39,4 +39,13 @@ module AdsHelper
     end
   end
 
+  def show_buy_button(ad)
+    if user_signed_in?
+      link_to "Buy", class: "btn btn-success buy-btn"
+    else
+      (link_to "Buy", new_user_registration_path, class: "btn btn-success buy-btn") +
+      flash[:notice] = "This action requires you to log in"
+    end
+  end
+
 end
