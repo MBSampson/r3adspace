@@ -9,7 +9,7 @@
         <p class="ad-category"><%= ad.category.name %></p>
         <%= link_to ad.title, ad, class: "ad-title" %>
         <p><%= number_to_currency(ad.price) %></p>
-        <p><%= ad.description %></p>
+        <p><%= simple_format(ad.description) %></p>
         <%= show_ad_published_status(@page, ad) %>
         <p>Posted By: <%= ad.user.first_name + " " + ad.user.last_name %></p>
       </div>

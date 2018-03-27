@@ -6,7 +6,7 @@
         <br>
         <p><%= number_to_currency(@ad.price) %></p>
         <br>
-        <p><%= @ad.description %></p>
+        <p><%= simple_format(@ad.description) %></p>
         <br>
         <p>Visibility: <span class="ad-published-status"><%= @ad.published %></span> <span class="light-box">Posted by: <%= @ad.user.first_name + " " + @ad.user.last_name %></span> Category: <span class="capitalize"><%= @ad.category.name %></span></p>
         <br>
