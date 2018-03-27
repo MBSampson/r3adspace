@@ -1,24 +1,18 @@
 <div class="container-fluid">
-  <div class="ad-show-container">
+  <div class="container ad-content-container">
     <h2><%= @ad.title %></h2>
     <br>
     <p><%= number_to_currency(@ad.price) %></p>
     <br>
     <p><%= simple_format(@ad.description) %></p>
     <br>
-    <p>Visibility: <span class="ad-published-status"><%= @ad.published %></span> <span class="light-box">Posted by: <%= @ad.user.first_name + " " + @ad.user.last_name %></span> Category: <span class="capitalize"><%= @ad.category.name %></span></p>
+    <p>Visibility: <span class="ad-published-status"><%= @ad.published %></span> <span class="ad-attribute-separator">Posted by: <%= @ad.user.first_name + " " + @ad.user.last_name %></span> Category: <span class="capitalize"><%= @ad.category.name %></span></p>
     <%= show_buy_button(@ad) %>
     <br>
     <div class="ad-show-photo">
       <%= image_tag @ad.photo %>
     </div>
-    <div class="row">
-      <div class="col-md-10">
-        <%= display_edit_btns(@ad) %>
-      </div>
-      <div class="col-md-2">
-        <%= display_published_toggle_btns(@ad) %>
-      </div>
-    </div>
+    <%= display_edit_btns(@ad) %>
+    <%= display_published_toggle_btns(@ad) %>
   </div>
 </div>

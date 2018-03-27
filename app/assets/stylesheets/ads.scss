@@ -1,7 +1,7 @@
 // ===== AD STYLES =====
 .ad-content-container{
   background-color: white;
-  padding: 2.5em;
+  padding: 3.5em;
 }
 
 .ad-main-header-text{
@@ -60,6 +60,19 @@
   font-weight: 500;
 }
 
+.ad-attribute-separator{
+  padding: 1em 2em;
+}
+
+.ad-published-status span {
+  float: right;
+  clear: left;
+}
+
+.ad-action-btn {
+  margin-left: 1em;
+}
+
 // ===== END AD STYLES =====
 
 
@@ -113,17 +126,17 @@
   font-weight: bold;
 }
 
-.ad-published-status span {
-  float: right;
-  clear: left;
-}
-
 // ===== END POSTER FILTER STYLES =====
 
 .capitalize{
   text-transform: capitalize;
   font-size: inherit;
   font-weight: inherit;
+}
+
+.float-right {
+  float: right;
+  display: block;
 }
 
 
@@ -143,9 +156,6 @@
 //   width: 30%;
 // }
 //
-// .float-right {
-//   float: right;
-// }
 //
 //
 // .form-group > select {
@@ -296,9 +306,6 @@
 //   float: right;
 // }
 //
-// .ad-action-btn {
-//   margin-left: 1em;
-// }
 //
 // .placeholder-form-photo {
 //   width: 150px;
