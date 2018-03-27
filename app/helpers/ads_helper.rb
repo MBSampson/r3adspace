@@ -41,10 +41,11 @@ module AdsHelper
 
   def show_buy_button(ad)
     if user_signed_in?
-      link_to "Buy", class: "btn btn-success buy-btn"
+      if current_user.id != ad.id
+        link_to "Buy", ads_purchase_path(:ad_id => ad.id ), class: "btn btn-success buy-btn"
+      end 
     else
-      (link_to "Buy", new_user_registration_path, class: "btn btn-success buy-btn") +
-      flash[:notice] = "This action requires you to log in"
+      link_to "Buy", new_user_registration_path, class: "btn btn-success buy-btn"
     end
   end
 
