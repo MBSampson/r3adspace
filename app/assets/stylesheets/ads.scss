@@ -60,10 +60,10 @@
 
 
 // ===== FILTER STYLES =====
-.filter-content {
+#filter-items-container{
+  display: none;
   background-color: white;
   width: 100%;
-  min-height: 20em;
   float: left;
   border: 1px solid lightgray;
   box-shadow: 1px 1px 1px gray;
@@ -76,8 +76,9 @@
   text-transform: capitalize;
   font-weight: 500;
   padding: 0.25em 0;
-  color: black;
+  width: 100%;
   display: block;
+  color: black;
 }
 
 .filter-item:hover{
@@ -92,6 +93,8 @@
 .filter-item:nth-child(even){
   background-color: #f8f9fa;
 }
+
+
 // ===== END FILTER STYLES =====
 
 

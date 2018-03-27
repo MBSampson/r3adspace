@@ -16,3 +16,15 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+function showFilterContainer(){
+	var filterContainerElem = document.getElementById("filter-items-container"),
+      filterBtn = document.getElementById("show-filter-btn");
+	if(filterContainerElem.style.display === "block"){
+		filterContainerElem.style.display = "none";
+    filterBtn.innerHTML = "Show Filters";
+	} else {
+		filterContainerElem.style.display = "block";
+    filterBtn.innerHTML = "Hide Filters";
+	}
+}
