@@ -36,7 +36,7 @@ body {
 
 .notification-container {
   position: absolute;
-  top: 20px;
+  top: 60px;
   right: 40%;
   width: 20%;
   color: limegreen;
@@ -62,12 +62,14 @@ body {
   list-style: none;
 }
 
+a.btn.btn-success.buy-btn{
+  float: right;
+}
+
 /******   NAV STYLES  ******/
 
 .navbar {
-  height: 8em;
   padding: 2.5em;
-  min-width: 150em;
 }
 
 .nav-bar .nav-link li a {

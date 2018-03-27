@@ -1,22 +1,16 @@
 <div class="container-fluid">
   <div class="ad-show-container">
-    <div class="row">
-      <div class="col-md-7">
-        <h2><%= @ad.title %></h2>
-        <br>
-        <p><%= number_to_currency(@ad.price) %></p>
-        <br>
-        <p><%= simple_format(@ad.description) %></p>
-        <br>
-        <p>Visibility: <span class="ad-published-status"><%= @ad.published %></span> <span class="light-box">Posted by: <%= @ad.user.first_name + " " + @ad.user.last_name %></span> Category: <span class="capitalize"><%= @ad.category.name %></span></p>
-        <br>
-        <div class="ad-show-photo">
-          <%= image_tag @ad.photo %>
-        </div>
-      </div>
-      <div class="col-md-5">
-
-      </div>
+    <h2><%= @ad.title %></h2>
+    <br>
+    <p><%= number_to_currency(@ad.price) %></p>
+    <br>
+    <p><%= simple_format(@ad.description) %></p>
+    <br>
+    <p>Visibility: <span class="ad-published-status"><%= @ad.published %></span> <span class="light-box">Posted by: <%= @ad.user.first_name + " " + @ad.user.last_name %></span> Category: <span class="capitalize"><%= @ad.category.name %></span></p>
+    <%= show_buy_button(@ad) %>
+    <br>
+    <div class="ad-show-photo">
+      <%= image_tag @ad.photo %>
     </div>
     <div class="row">
       <div class="col-md-10">
@@ -24,7 +18,6 @@
       </div>
       <div class="col-md-2">
         <%= display_published_toggle_btns(@ad) %>
-        <%= show_buy_button(@ad) %>
       </div>
     </div>
   </div>
