@@ -1,6 +1,7 @@
 class Ad < ApplicationRecord
   belongs_to :category
   belongs_to :user
+  # belongs_to :order
   after_initialize :set_defaults
 
   # Configure for Paperclip
