@@ -1,7 +1,9 @@
 <% @ads.each do |ad| %>
   <div class="row ad-item">
     <div class="col-md-3">
-      <%= image_tag ad.photo, class: "img-fluid ad-photo" %>
+      <div class="ad-photo-container">
+        <%= image_tag ad.photo, class: "img-fluid" %>
+      </div>
     </div>
     <div class="col-md-9">
       <p class="ad-category-text"><%= ad.category.name %></p>

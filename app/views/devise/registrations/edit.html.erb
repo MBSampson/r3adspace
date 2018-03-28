@@ -9,7 +9,7 @@
         <div class="col-md-5">
           <% if @user.avatar %>
             <div class="avatar-image">
-              <%= image_tag @user.avatar  %>
+              <%= image_tag @user.avatar, class: "img-fluid"  %>
               <br>
             </div>
           <% end %>
