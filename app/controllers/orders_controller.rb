@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:index, :show, :new, :edit, :update, :destroy ]
+  before_action :set_current_user, only: [:index, :show, :new, :create, :update]
 
   # GET /orders
   # GET /orders.json
@@ -27,6 +27,7 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+    @order.user_id = @user.id
 
     respond_to do |format|
       if @order.save
@@ -69,7 +70,7 @@ class OrdersController < ApplicationController
       @order = Order.find(params[:id])
     end
 
-    def set_user
+    def set_current_user
       @user = current_user
     end
 
