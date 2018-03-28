@@ -11,42 +11,43 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :buyer_name %>
     <%= form.text_field :buyer_name, id: :order_buyer_name %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :seller_name %>
     <%= form.text_field :seller_name, id: :order_seller_name %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :payment_confirmed %>
     <%= form.check_box :payment_confirmed, id: :order_payment_confirmed %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :address %>
-    <%= form.text_field :address, id: :order_address %>
+    <%= form.text_field :address, id: :order_address, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :state %>
-    <%= form.text_field :state, id: :order_state %>
+    <%= form.text_field :state, id: :order_state, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :zipcode %>
-    <%= form.number_field :zipcode, id: :order_zipcode %>
+    <%= form.number_field :zipcode, id: :order_zipcode, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :city %>
-    <%= form.text_field :city, id: :order_city %>
+    <%= form.text_field :city, id: :order_city, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= link_to 'Back', '/', class: "btn btn-primary" %>
+    <%= form.submit "Submit", class: "btn btn-success" %>
   </div>
 <% end %>
