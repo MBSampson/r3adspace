@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create! :first_name => 'Matthew', :last_name => 'Sampson', :email => 'mbsampson89@gmail.com', :password => 'test123', :password_confirmation => 'test123'
+user = User.create! :first_name => 'Matthew', :last_name => 'Sampson', :email => 'mbsampson89@gmail.com', :password => 'test123', :password_confirmation => 'test123', :authorization => "admin"
 user = User.create! :first_name => 'Jennifer', :last_name => 'Hayden', :email => 'jHay@test.com', :password => 'test123', :password_confirmation => 'test123'
+user = User.create! :first_name => 'Admin', :last_name => 'Admin', :email => 'admin@test.com', :password => 'test123', :password_confirmation => 'test123', :authorization => "admin"
+
 
 puts "Generated User"
 

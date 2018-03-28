@@ -5,4 +5,15 @@
   background-color: white;
   padding: 3.5em;
   margin-top: 5em;
+  overflow: hidden;
+}
+
+.order-item {
+  display: inline-block;
+  float: left;
+  padding: 1em;
+}
+
+.order-item:nth-child(even){
+  background-color: #f8f9fa;
 }
