@@ -11,11 +11,7 @@
 }
 
 .ad-item {
-  min-height: 170px;
-  width: 100%;
-  padding: 0.8em;
-  margin: 1em 0;
-  float: left;
+  padding: 1em;
 }
 
 .ad-item:nth-child(even){
@@ -24,15 +20,6 @@
 }
 
 .ad-photo {
-  float: left;
-  width: 150px;
-  height: 150px;
-  margin: 0 0.5em 0.5em 0;
-}
-
-.ad-photo img {
-  max-width: 100%;
-  max-height: 100%;
   margin: 0 auto;
   display: block;
 }
@@ -74,18 +61,18 @@
   margin-left: 1em;
 }
 
-div.container.ad-content-container.ad-show-container{
-  padding: 5.5em;
-}
-
 .ad-show-photo {
-  width: 100%;
+  width: 350px;
   height: 250px;
 }
 
-.ad-show-photo img {
+.ad-show-photo img{
   max-width: 100%;
   max-height: 100%;
+}
+
+.ad-info-container {
+  text-align: center;
 }
 
 // ===== END AD STYLES =====
@@ -160,13 +147,13 @@ div.container.ad-content-container.ad-show-container{
   border-radius: .25rem;
 }
 
-.form-group > input {
-  width: 100%;
-}
-
-.form-text {
-  width: 100%;
-}
+// .form-group > input {
+//   width: 100%;
+// }
+//
+// .form-control {
+//   width: 100%;
+// }
 
 .placeholder-form-photo {
   width: 150px;

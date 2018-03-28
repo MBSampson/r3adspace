@@ -6,10 +6,20 @@
     <br>
     <p><%= simple_format(@ad.description) %></p>
     <br>
-    <p>Visibility: <span class="ad-published-status"><%= @ad.published %></span> <span class="ad-attribute-separator">Posted by: <%= @ad.user.first_name + " " + @ad.user.last_name %></span> Category: <span class="capitalize"><%= @ad.category.name %></span></p>
+    <div class="row ad-info-container">
+      <div class="col-sm-4">
+        Visibility: <%= @ad.published %></span>
+      </div>
+      <div class="col-sm-4">
+        Posted by: <%= @ad.user.first_name + " " + @ad.user.last_name %>
+      </div>
+      <div class="col-sm-4">
+        Category: <span class="capitalize"><%= @ad.category.name %></span>
+      </div>
+    </div>
     <br>
     <div class="ad-show-photo">
-      <%= image_tag @ad.photo %>
+      <%= image_tag @ad.photo, class: "img-fluid" %>
     </div>
     <br>
     <%= display_edit_btns(@ad) %>

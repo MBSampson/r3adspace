@@ -15,23 +15,26 @@
           <% end %>
             <br>
             <br>
-            <%= f.file_field :avatar, id: :user_avatar %>
+            <div class="form-group">
+              <%= f.label :avatar %>
+              <%= f.file_field :avatar, id: :user_avatar, class: "form-control" %>
+            </div>
         </div>
 
         <div class="col-md-7">
           <div class="form-group">
             <%= f.label :first_name %><br>
-            <%= f.text_field :first_name, id: :user_first_name, class: "form-text" %>
+            <%= f.text_field :first_name, id: :user_first_name, class: "form-control" %>
           </div>
 
           <div class="form-group">
             <%= f.label :last_name %><br>
-            <%= f.text_field :last_name, id: :user_last_name, class: "form-text" %>
+            <%= f.text_field :last_name, id: :user_last_name, class: "form-control" %>
           </div>
 
           <div class="form-group">
             <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
           </div>
 
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -42,7 +45,7 @@
           <div class="new-password-content">
             <div class="form-group">
               <%= f.label :password, "New Password" %><br />
-              <%= f.password_field :password, autocomplete: "off" %>
+              <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
               <% if @minimum_password_length %>
                 <br />
                 <em><%= @minimum_password_length %> characters minimum</em>
@@ -51,7 +54,7 @@
 
             <div class="form-group">
               <%= f.label :password_confirmation, "Confirm New Password" %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "off" %>
+              <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
             </div>
           </div>
           <br>
@@ -59,7 +62,7 @@
 
           <div class="form-group">
             <%= f.label :current_password, "Current Password" %><br />
-            <%= f.password_field :current_password, autocomplete: "off", placeholder: "Leave blank unless you are changing your password" %>
+            <%= f.password_field :current_password, autocomplete: "off", placeholder: "Leave blank unless you are changing your password", class: "form-control" %>
           </div>
 
           <div class="actions">

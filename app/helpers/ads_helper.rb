@@ -42,7 +42,7 @@ module AdsHelper
   def show_buy_button(ad)
     if user_signed_in?
       if current_user.id != ad.user_id
-        link_to "Buy", ads_purchase_path(:ad_id => ad.id ), class: "btn btn-success buy-btn"
+        link_to "Buy", new_order_path(:ad_id => ad.id ), class: "btn btn-success buy-btn"
       end
     else
       link_to "Buy", new_user_registration_path, class: "btn btn-success buy-btn"
