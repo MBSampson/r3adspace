@@ -62,3 +62,6 @@ gem 'devise'
 
 # Use Paperclip to handle image uploads
 gem "paperclip", "~> 6.0.0"
+
+# Use Stripe to process User payments
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'

@@ -10,43 +10,43 @@
       </ul>
     </div>
   <% end %>
+  <h2>Purchase: <%= @ad.title %></h2>
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card ad-preview-card" style="width: 18rem;">
+        <%= image_tag @ad.photo, class: "card-img-top img-fluid" %>
+        <div class="card-body">
+          <h5 class="card-title"><%= @ad.title %></h5>
+          <p class="card-text"><%= truncate(@ad.description, :length => 80) %></p>
+          <%= link_to "View Ad", @ad, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 order-address-container">
+      <div class="form-group">
+        <%= form.label :address %>
+        <%= form.text_field :address, id: :order_address, class: "form-control" %>
+      </div>
 
-  <div class="form-group">
-    <%= form.label :buyer_name %>
-    <%= form.text_field :buyer_name, id: :order_buyer_name %>
+      <div class="form-group">
+        <%= form.label :state %>
+        <%= form.text_field :state, id: :order_state, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :zipcode %>
+        <%= form.number_field :zipcode, id: :order_zipcode, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :city %>
+        <%= form.text_field :city, id: :order_city, class: "form-control" %>
+      </div>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= form.label :seller_name %>
-    <%= form.text_field :seller_name, id: :order_seller_name %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :payment_confirmed %>
-    <%= form.check_box :payment_confirmed, id: :order_payment_confirmed %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :order_address, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :state %>
-    <%= form.text_field :state, id: :order_state, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :zipcode %>
-    <%= form.number_field :zipcode, id: :order_zipcode, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :city %>
-    <%= form.text_field :city, id: :order_city, class: "form-control" %>
-  </div>
-
-  <div class="actions">
+  <div class="actions order-btn-container">
     <%= link_to 'Back', '/', class: "btn btn-primary" %>
     <%= form.submit "Submit", class: "btn btn-success" %>
   </div>

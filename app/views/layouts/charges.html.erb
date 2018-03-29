@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>R3Adspace</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="notification-container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <% if current_user %>
+        <p>USER: <%= current_user.first_name %></p>
+      <% end %>
+    </div>
+
+    <%= render  "shared/home_nav" %>
+
+    <%= yield %>
+
+    <footer class="bg-light">
+      <p>R3Adspace, 2018 RubyThree LLC</p>
+    </footer>
+  </body>
+</html>
