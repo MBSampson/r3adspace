@@ -17,7 +17,7 @@ module AdsHelper
         else
           link_to "Hide", toggle_published_ad_path(ad.id), class: "btn btn-danger ad-action-btn float-right"
         end
-      elsif current_user.id == ad.user_id && ad.sold == true 
+      elsif current_user.id == ad.user_id && ad.sold == true
         link_to "Delete Ad", @ad, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger ad-action-btn float-right"
       end
     end

@@ -89,4 +89,21 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Configure SMTP mailer
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "r3adspace.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
+  }
+
+  # Set Action Mailer default URL as per Devise
+  config.action_mailer.default_url_options = { host: 'r3adspace.herokuapp.com' }
+
+
+
 end
