@@ -2,7 +2,7 @@
     <div class="row ad-item">
       <div class="col-md-3">
         <div class="ad-photo-container">
-          <%= image_tag ad.photo, class: "img-fluid" %>
+          <%= link_to image_tag(ad.photo), ad, class: "img-fluid" %>
         </div>
       </div>
       <div class="col-md-9">
