@@ -1,3 +1,19 @@
 // Place all the styles related to the charges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.charge-content-container {
+  background-color: white;
+  padding: 3.5em;
+  margin-top: 5em;
+}
+
+.ad-preview-card {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+.card {
+  padding: 5px;
+  height: 100%;
+}

@@ -27,13 +27,13 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     user = current_user
-
-    @order = Order.new(params(:buyer_name, { seller_name => "PARAMSWORK"}, :payment_confirmed, :address, :state, :zipcode, :city))
+    @order = Order.new(order_params)
+    @ad = Ad.find(params[:ad_id])
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render new_charge_path, status: :created, location: @order }
+        format.html { redirect_to new_charge_path(:ad_id => @ad.id, :order_id => @order.id), notice: 'Order was successfully created.' }
+        format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
