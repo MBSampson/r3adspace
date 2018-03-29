@@ -21,7 +21,6 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
-    byebug
     @ad = Ad.find(params[:ad_id])
   end
 
@@ -63,7 +62,7 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to '/', notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

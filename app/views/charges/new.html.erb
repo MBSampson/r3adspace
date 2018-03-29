@@ -9,7 +9,6 @@
           <div class="card-body d-flex flex-column">
             <h5 class="card-title"><%= @ad.title %></h5>
             <p class="card-text"><%= truncate(@ad.description, :length => 80) %></p>
-            <%= link_to "View Ad", @ad, class: "mt-auto btn btn-primary" %>
           </div>
         </div>
       </div>
@@ -30,7 +29,7 @@
             <h5 class="card-title">Payment</h5>
             <p class="card-text">
               <%= form_tag charges_path do %>
-                <article>
+                <article class="charge-card-body">
                   <% if flash[:error].present? %>
                     <div id="error_explanation">
                       <p><%= flash[:error] %></p>
@@ -44,7 +43,7 @@
             <div class="charge-btn-container">
               <%= hidden_field_tag(:ad_id, @ad.id) %>
               <%= hidden_field_tag(:order_id, @order.id) %>
-              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button mt-auto btn" id="stripe-btn"
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button mt-auto" id="stripe-btn"
                       data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                       data-description="Purchase <%= @ad.title %>"
                       data-amount="<%= (@ad.price.to_f * 100).to_s %>"
@@ -53,6 +52,12 @@
           <% end %>
           </div>
         </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-lg-12">
+        <%= link_to "Cancel Purchase", @order, method: :delete, data: { confirm: "Are you sure want to cancel? Your order will be deleted." }, class: "btn btn-danger ad-action-btn" %>
       </div>
     </div>
   </div>
