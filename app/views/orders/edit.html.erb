@@ -1,6 +1,42 @@
-<h1>Editing Order</h1>
+<div class="container-fluid">
+  <div class="container order-content-container">
+    <h1>Editing Order</h1>
 
-<%= render 'form', order: @order %>
+    <%= form_with(model: @order, local: true) do |form| %>
+      <% if @order.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
-<%= link_to 'Show', @order %> |
-<%= link_to 'Back', orders_path %>
+          <ul>
+          <% @order.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="form-group">
+        <%= form.label :address %>
+        <%= form.text_field :address, id: :order_address, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :state %>
+        <%= form.text_field :state, id: :order_state, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :zipcode %>
+        <%= form.number_field :zipcode, id: :order_zipcode, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :city %>
+        <%= form.text_field :city, id: :order_city, class: "form-control" %>
+      </div>
+
+      <%= hidden_field_tag(:ad_id, @ad.id) %>
+      <%= form.submit "Submit", class: "btn btn-success" %>
+    <% end %>
+
+  </div>
+</div>

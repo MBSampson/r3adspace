@@ -1,5 +1,7 @@
 <div class="container-fluid">
   <div class="container charge-content-container">
+    <h2 class="charges-title-text">Confirm Purchase Info</h2>
+    <br>
     <div class="row">
       <div class="col-md-4">
         <div class="card ad-preview-card" style="width: 18rem;">
@@ -12,18 +14,18 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
+        <div class="card charges-card" style="width: 18rem;">
           <%= image_tag "delivery.png", class: "card-img-top img-fluid" %>
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Delivery Info</h5>
             <p class="card-text"><%= @order.address %><br><%= @order.city %> <%= @order.state %>, <%= @order.zipcode %></p>
-            <%= link_to "Change Address", @order, class: "mt-auto btn btn-info" %>
+            <%= link_to "Change Address", edit_order_path(:id => @order.id, :ad_id => @ad.id), class: "mt-auto btn btn-info" %>
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-          <%= image_tag "delivery.png", class: "card-img-top img-fluid" %>
+        <div class="card charges-card" style="width: 18rem;">
+          <%= image_tag "cc.png", class: "card-img-top img-fluid" %>
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Payment</h5>
             <p class="card-text">
@@ -39,12 +41,15 @@
                   </label>
                 </article>
             </p>
-            <%= hidden_field_tag(:ad_id, @ad.id) %>
-            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button mt-auto btn"
-                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                    data-description="Purchase <%= @ad.title %>"
-                    data-amount="<%= (@ad.price.to_f * 100).to_s %>"
-                    data-locale="auto"></script>
+            <div class="charge-btn-container">
+              <%= hidden_field_tag(:ad_id, @ad.id) %>
+              <%= hidden_field_tag(:order_id, @order.id) %>
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button mt-auto btn" id="stripe-btn"
+                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                      data-description="Purchase <%= @ad.title %>"
+                      data-amount="<%= (@ad.price.to_f * 100).to_s %>"
+                      data-locale="auto"></script>
+            </div>
           <% end %>
           </div>
         </div>

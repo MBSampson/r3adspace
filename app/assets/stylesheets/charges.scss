@@ -5,6 +5,7 @@
   background-color: white;
   padding: 3.5em;
   margin-top: 5em;
+  text-align: center;
 }
 
 .ad-preview-card {
@@ -13,7 +14,23 @@
   display: block;
 }
 
+.charges-title-text {
+  text-align: center;
+}
+
 .card {
   padding: 5px;
   height: 100%;
+}
+
+.charges-card {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+#stripe-btn {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }

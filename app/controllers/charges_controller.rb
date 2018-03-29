@@ -7,9 +7,10 @@ class ChargesController < ApplicationController
   end
 
   def create
-    ad = Ad.find(params[:ad_id])
+    @ad = Ad.find(params[:ad_id])
+    @order = Order.find(params[:order_id])
     # Amount in cents
-    @amount = (ad.price.to_f * 100).to_i
+    @amount = (@ad.price.to_f * 100).to_i
 
 
     customer = Stripe::Customer.create(
@@ -24,8 +25,9 @@ class ChargesController < ApplicationController
       :currency    => 'usd'
     )
 
-    ad.sold = true
-    ad.save
+    @ad.sold = true
+    @ad.save
+    PurchaseMailer.new_purchase(@ad, @order).deliver_now
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
