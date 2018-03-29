@@ -8,19 +8,19 @@ class AdsController < ApplicationController
   # GET /ads
   # GET /ads.json
   def index
-    @ads = Ad.where(published: "published")
+    @ads = Ad.where(published: "published", sold: false)
     @page = __method__.to_s
   end
 
   def category_filter
-    @ads = Ad.where(category_id: params[:category], published: "published")
+    @ads = Ad.where(category_id: params[:category], published: "published", sold: false)
     @category = Category.find(params[:category])
     @page = __method__.to_s
   end
 
   # Filters by the ad's poster
   def poster_filter
-    @ads = Ad.where(user_id: params[:poster])
+    @ads = Ad.where(user_id: params[:poster]).order(sold: :desc)
     @page = __method__.to_s
   end
 

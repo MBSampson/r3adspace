@@ -11,6 +11,7 @@ class ChargesController < ApplicationController
     # Amount in cents
     @amount = (ad.price.to_f * 100).to_i
 
+
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
       :source  => params[:stripeToken]
@@ -22,6 +23,9 @@ class ChargesController < ApplicationController
       :description => 'Rails Stripe customer',
       :currency    => 'usd'
     )
+
+    ad.sold = true
+    ad.save
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
