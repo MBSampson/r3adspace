@@ -41,10 +41,11 @@ module AdsHelper
     end
   end
 
-  def show_buy_button(ad)
+  def show_purchase_container(ad)
     if user_signed_in?
       if current_user.id != ad.user_id
-        link_to "Buy", new_order_path(:ad_id => ad.id ), class: "btn btn-success buy-btn"
+        ("<span class='ad-quantity-text'>Qty: #{ad.quantity}</span>").html_safe +
+        (link_to "Buy", new_order_path(:ad_id => ad.id ), class: "btn btn-success buy-btn")
       end
     else
       link_to "Buy", new_user_registration_path, class: "btn btn-success buy-btn"

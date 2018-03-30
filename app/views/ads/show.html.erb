@@ -27,8 +27,8 @@
     <%= display_edit_btns(@ad) %>
     <%= display_published_toggle_btns(@ad) %>
     <div class="ad-show-purchase-container">
-      Quantity: <%= @ad.quantity %>
-      <%= show_buy_button(@ad) %>
+      <span class="ad-quantity-text">Quantity: <%= @ad.quantity %></span>
+      <%= show_purchase_container(@ad) %>
     </div>
   </div>
 </div>
