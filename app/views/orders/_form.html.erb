@@ -19,7 +19,6 @@
         <div class="card-body">
           <h5 class="card-title"><%= @ad.title %></h5>
           <p class="card-text"><%= truncate(@ad.description, :length => 80) %></p>
-          Qty: <%= select_tag :quantity, options_for_select(@quantity_arr, @ad.quantity) %>
         </div>
       </div>
     </div>
@@ -43,12 +42,18 @@
         <%= form.label :city %>
         <%= form.text_field :city, id: :order_city, class: "form-control" %>
       </div>
+
+      <div class="form-group">
+        <%= form.label :item_quantity %>
+        <%= select_tag "order[item_quantity]", options_for_select(@quantity_arr, @ad.quantity) %>
+      </div>
     </div>
   </div>
 
   <div class="actions order-btn-container">
     <%= link_to 'Back', '/', class: "btn btn-primary" %>
     <%= hidden_field_tag(:ad_id, @ad.id) %>
+    <%= hidden_field_tag(:item_quantity, :quantity) %>
     <%= form.submit "Submit", class: "btn btn-success" %>
   </div>
 <% end %>

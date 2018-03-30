@@ -18,7 +18,6 @@ class OrdersController < ApplicationController
     @order = Order.new
     @ad = Ad.find(params[:ad_id])
 
-    # concern time
     @quantity_arr = []
     i = 1
 
@@ -26,7 +25,6 @@ class OrdersController < ApplicationController
       @quantity_arr.push(i)
       i += 1
     end
-
   end
 
   # GET /orders/1/edit
@@ -89,6 +87,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:address, :state, :zipcode, :city, :user_id)
+      params.require(:order).permit(:address, :state, :zipcode, :city, :user_id, :item_quantity)
     end
 end

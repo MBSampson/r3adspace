@@ -4,6 +4,7 @@ class ChargesController < ApplicationController
 
   def new
     @order = Order.find(params[:order_id])
+    byebug
   end
 
   def create
