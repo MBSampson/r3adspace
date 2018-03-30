@@ -65,3 +65,10 @@ gem "paperclip", "~> 6.0.0"
 
 # Use Stripe to process User payments
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
+# Use as dependency for aws
+gem 'figaro'
+
+# Use to store images when deployed on Heroku
+gem 'aws-sdk', '< 2.0'
+gem 'aws-sdk-s3', '~> 1.8', '>= 1.8.2'
