@@ -9,6 +9,7 @@
           <div class="card-body d-flex flex-column">
             <h5 class="card-title"><%= @ad.title %></h5>
             <p class="card-text"><%= truncate(@ad.description, :length => 80) %></p>
+              <%= content_tag :span, "Item Quantity: " + @order.item_quantity.to_s, class: "item-quantity-container mt-auto" %>
           </div>
         </div>
       </div>
