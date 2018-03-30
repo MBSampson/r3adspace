@@ -83,6 +83,15 @@
   max-height: 100%;
 }
 
+.ad-show-purchase-container{
+  float: right;
+  select {
+    height: 30px;
+    width: 45px;
+    margin-right: 5px;
+  }
+}
+
 .ad-info-container {
   text-align: center;
 }
@@ -195,4 +204,8 @@
   text-align: center;
   margin: 5% auto;
   padding: 5%;
+}
+
+.quantity-select {
+  width: 50px;
 }

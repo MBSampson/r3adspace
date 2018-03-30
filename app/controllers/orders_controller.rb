@@ -17,6 +17,16 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @ad = Ad.find(params[:ad_id])
+
+    # concern time
+    @quantity_arr = []
+    i = 1
+
+    while i <= @ad.quantity do
+      @quantity_arr.push(i)
+      i += 1
+    end
+
   end
 
   # GET /orders/1/edit

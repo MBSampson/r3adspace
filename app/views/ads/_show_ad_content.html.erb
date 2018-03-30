@@ -20,7 +20,9 @@
         <% if !ad.sold %>
           <%= show_ad_published_status(@page, ad) %>
         <% end %>
-        <%= show_buy_button(ad) %>
+        <div class="ad-show-purchase-container">
+          <%= show_buy_button(ad) %>
+        </div>
         <p class="ad-author-text">Posted By: <%= ad.user.first_name + " " + ad.user.last_name %></p>
       </div>
     </div>
