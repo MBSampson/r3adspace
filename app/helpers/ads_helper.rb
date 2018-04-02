@@ -48,7 +48,7 @@ module AdsHelper
         (link_to "Buy", new_order_path(:ad_id => ad.id ), class: "btn btn-success buy-btn")
       end
     else
-      link_to "Buy", new_user_registration_path, class: "btn btn-success buy-btn"
+      link_to "Buy", new_user_session_path, class: "btn btn-success buy-btn"
     end
   end
 
