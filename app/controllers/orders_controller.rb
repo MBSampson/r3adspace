@@ -21,6 +21,8 @@ class OrdersController < ApplicationController
     @quantity_arr = []
     i = 1
 
+    byebug
+
     while i <= @ad.quantity do
       @quantity_arr.push(i)
       i += 1

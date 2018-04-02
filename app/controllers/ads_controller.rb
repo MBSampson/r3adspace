@@ -2,7 +2,7 @@ class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :edit, :update, :destroy, :toggle_published]
   before_action :set_categories, only: [:index, :category_filter]
   before_action :set_users, only: [:poster_filter]
-  before_action :authenticate_user!, only: [:poster_filter, :edit, :new, :create, :update]
+  before_action :authenticate_user!, only: [:poster_filter, :edit, :new, :create, :update, :buy_ad]
   before_action :set_current_user
 
   # GET /ads
@@ -22,6 +22,14 @@ class AdsController < ApplicationController
   def poster_filter
     @ads = Ad.where(user_id: params[:poster]).order(sold: :desc)
     @page = __method__.to_s
+  end
+
+  def buy_ad
+    # Buy_ad -> requires authenticated user (redirects to new session if no user is found)
+    #        -> redirects the now logged in user to the new_order view with the ad item that they want to purchase
+    # This allows non-users to view ads yet still requires them to log into an account to purchase ad items
+    @ad = Ad.find(params[:ad_id])
+    redirect_to new_order_path(:ad_id => @ad.id )
   end
 
   # GET /ads/1
