@@ -49,7 +49,8 @@ module AdsHelper
         (link_to "Buy", new_order_path(:ad_id => ad.id ), class: "btn btn-success buy-btn")
       end
     else
-      link_to "Buy", ads_buy_ad_url(:ad_id => ad.id), class: "btn btn-success buy-btn"
+      ("<span class='ad-quantity-text'>Qty: #{ad.quantity}</span>").html_safe +
+      (link_to "Buy", ads_buy_ad_url(:ad_id => ad.id), class: "btn btn-success buy-btn")
     end
   end
 
