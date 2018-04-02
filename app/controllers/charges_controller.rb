@@ -28,6 +28,12 @@ class ChargesController < ApplicationController
       @ad.sold = true
     end
     @ad.save
+
+    @order.completed = true
+    @order.save
+
+    byebug
+
     PurchaseMailer.new_purchase(@ad, @order).deliver_now
 
   rescue Stripe::CardError => e
