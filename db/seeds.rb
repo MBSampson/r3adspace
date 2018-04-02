@@ -69,7 +69,7 @@ Ad.create!(
   user_id: 1,
   published: "published",
   quantity: 3,
-  address: "19384 Haylan Drive",
+  street: "19384 Haylan Drive",
   city: "San Jose",
   state: "California",
   zipcode: 95078
@@ -84,7 +84,7 @@ In eu dolor non eros tincidunt efficitur ut eu velit. Vestibulum fermentum bland
   user_id: 2,
   published: "published",
   quantity: 2,
-  address: "19384 Haylan Drive",
+  street: "19384 Haylan Drive",
   city: "San Jose",
   state: "California",
   zipcode: 95078
@@ -98,7 +98,7 @@ Ad.create!(
   user_id: 1,
   published: "published",
   quantity: 1,
-  address: "19384 Haylan Drive",
+  street: "19384 Haylan Drive",
   city: "San Jose",
   state: "California",
   zipcode: 95078
@@ -112,7 +112,7 @@ Ad.create!(
   category_id: 10,
   user_id: 2,
   quantity: 8,
-  address: "19384 Haylan Drive",
+  street: "19384 Haylan Drive",
   city: "San Jose",
   state: "California",
   zipcode: 95078
@@ -126,7 +126,7 @@ Ad.create!(
   category_id: 2,
   user_id: 1,
   quantity: 1,
-  address: "19384 Haylan Drive",
+  street: "19384 Haylan Drive",
   city: "San Jose",
   state: "California",
   zipcode: 95078
@@ -142,7 +142,7 @@ In eu dolor non eros tincidunt efficitur ut eu velit. Vestibulum fermentum bland
   user_id: 2,
   published: "published",
   quantity: 1,
-  address: "19384 Haylan Drive",
+  street: "19384 Haylan Drive",
   city: "San Jose",
   state: "California",
   zipcode: 95078
@@ -156,7 +156,7 @@ Ad.create!(
   category_id: 3,
   user_id: 1,
   quantity: 2,
-  address: "19384 Haylan Drive",
+  street: "19384 Haylan Drive",
   city: "San Jose",
   state: "California",
   zipcode: 95078
@@ -170,7 +170,7 @@ Ad.create!(
   category_id: 4,
   user_id: 1,
   quantity: 4,
-  address: "19384 Haylan Drive",
+  street: "19384 Haylan Drive",
   city: "San Jose",
   state: "California",
   zipcode: 95078
@@ -184,7 +184,7 @@ Ad.create!(
   category_id: 4,
   user_id: 2,
   quantity: 3,
-  address: "19384 Haylan Drive",
+  street: "19384 Haylan Drive",
   city: "San Jose",
   state: "California",
   zipcode: 95078
@@ -199,7 +199,7 @@ Ad.create!(
   user_id: 1,
   published: "published",
   quantity: 3,
-  address: "19384 Haylan Drive",
+  street: "19384 Haylan Drive",
   city: "San Jose",
   state: "California",
   zipcode: 95078
@@ -213,7 +213,7 @@ Ad.create!(
   category_id: 2,
   user_id: 1,
   quantity: 2,
-  address: "19384 Haylan Drive",
+  street: "19384 Haylan Drive",
   city: "San Jose",
   state: "California",
   zipcode: 95078
@@ -228,7 +228,7 @@ Ad.create!(
   user_id: 1,
   published: "published",
   quantity: 1,
-  address: "19384 Haylan Drive",
+  street: "19384 Haylan Drive",
   city: "San Jose",
   state: "California",
   zipcode: 95078
@@ -243,7 +243,7 @@ Ad.create!(
   user_id: 1,
   published: "published",
   quantity: 2,
-  address: "19384 Haylan Drive",
+  street: "19384 Haylan Drive",
   city: "San Jose",
   state: "California",
   zipcode: 95078
