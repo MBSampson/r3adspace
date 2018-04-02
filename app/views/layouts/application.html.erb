@@ -13,9 +13,6 @@
     <div class="notification-container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-      <% if current_user %>
-        <p>USER: <%= current_user.first_name %></p>
-      <% end %>
     </div>
 
     <%= render  "shared/home_nav" %>

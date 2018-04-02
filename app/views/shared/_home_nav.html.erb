@@ -1,5 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/"><%= image_tag 'logo-icon.png' %></a>
+  <a class="navbar-brand" href="/">
+    <% if user_signed_in? && current_user.avatar_file_name != nil %>
+      <%= image_tag current_user.avatar, class: "nav-brand-img" %>
+    <% else %>
+      <%= image_tag 'logo-icon.png', class: "nav-brand-img" %>
+    <% end %>
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

@@ -39,6 +39,7 @@ body {
   top: 60px;
   right: 40%;
   width: 20%;
+  height: 50px;
   color: limegreen;
   font-size: 15em;
   font-weight: bold;
@@ -70,6 +71,10 @@ a.btn.btn-success.buy-btn{
 
 .navbar {
   padding: 2.5em;
+}
+
+.nav-brand-img {
+  border-radius: 20px;
 }
 
 .nav-bar .nav-link li a {
