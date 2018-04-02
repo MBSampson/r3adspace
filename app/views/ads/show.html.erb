@@ -2,6 +2,8 @@
   <div class="container ad-content-container ad-show-container">
     <h2><%= @ad.title %></h2>
     <br>
+    <p><%= @ad.street %> <%= @ad.city %>, <%= @ad.state %> <%= @ad.zipcode %></p>
+    <br>
     <p><%= number_to_currency(@ad.price) %></p>
     <br>
     <p><%= simple_format(@ad.description) %></p>

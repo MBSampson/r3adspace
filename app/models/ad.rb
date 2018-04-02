@@ -13,7 +13,7 @@ class Ad < ApplicationRecord
 
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
 
-  validates_presence_of :title, :description, :price, :category_id, :quantity
+  validates_presence_of :title, :description, :price, :category_id, :quantity, :street, :city, :state, :zipcode
   validates :price,
             numericality: { :greater_than_or_equal_to => 0 }
 

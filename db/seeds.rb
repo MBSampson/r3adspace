@@ -68,7 +68,11 @@ Ad.create!(
   category_id: 1,
   user_id: 1,
   published: "published",
-  quantity: 3
+  quantity: 3,
+  address: "19384 Haylan Drive",
+  city: "San Jose",
+  state: "California",
+  zipcode: 95078
 )
 
 Ad.create!(
@@ -79,7 +83,11 @@ In eu dolor non eros tincidunt efficitur ut eu velit. Vestibulum fermentum bland
   category_id: 1,
   user_id: 2,
   published: "published",
-  quantity: 2
+  quantity: 2,
+  address: "19384 Haylan Drive",
+  city: "San Jose",
+  state: "California",
+  zipcode: 95078
 )
 
 Ad.create!(
@@ -89,7 +97,12 @@ Ad.create!(
   category_id: 2,
   user_id: 1,
   published: "published",
-  quantity: 1
+  quantity: 1,
+  address: "19384 Haylan Drive",
+  city: "San Jose",
+  state: "California",
+  zipcode: 95078
+
 )
 
 Ad.create!(
@@ -98,7 +111,12 @@ Ad.create!(
   price: 13.99,
   category_id: 10,
   user_id: 2,
-  quantity: 8
+  quantity: 8,
+  address: "19384 Haylan Drive",
+  city: "San Jose",
+  state: "California",
+  zipcode: 95078
+
 )
 
 Ad.create!(
@@ -107,7 +125,12 @@ Ad.create!(
   price: 13.99,
   category_id: 2,
   user_id: 1,
-  quantity: 1
+  quantity: 1,
+  address: "19384 Haylan Drive",
+  city: "San Jose",
+  state: "California",
+  zipcode: 95078
+
 )
 
 Ad.create!(
@@ -118,7 +141,12 @@ In eu dolor non eros tincidunt efficitur ut eu velit. Vestibulum fermentum bland
   category_id: 3,
   user_id: 2,
   published: "published",
-  quantity: 1
+  quantity: 1,
+  address: "19384 Haylan Drive",
+  city: "San Jose",
+  state: "California",
+  zipcode: 95078
+
 )
 
 Ad.create!(
@@ -127,7 +155,12 @@ Ad.create!(
   price: 56.49,
   category_id: 3,
   user_id: 1,
-  quantity: 2
+  quantity: 2,
+  address: "19384 Haylan Drive",
+  city: "San Jose",
+  state: "California",
+  zipcode: 95078
+
 )
 
 Ad.create!(
@@ -136,7 +169,12 @@ Ad.create!(
   price: 56.49,
   category_id: 4,
   user_id: 1,
-  quantity: 4
+  quantity: 4,
+  address: "19384 Haylan Drive",
+  city: "San Jose",
+  state: "California",
+  zipcode: 95078
+
 )
 
 Ad.create!(
@@ -145,7 +183,12 @@ Ad.create!(
   price: 56.49,
   category_id: 4,
   user_id: 2,
-  quantity: 3
+  quantity: 3,
+  address: "19384 Haylan Drive",
+  city: "San Jose",
+  state: "California",
+  zipcode: 95078
+
 )
 
 Ad.create!(
@@ -155,7 +198,12 @@ Ad.create!(
   category_id: 8,
   user_id: 1,
   published: "published",
-  quantity: 3
+  quantity: 3,
+  address: "19384 Haylan Drive",
+  city: "San Jose",
+  state: "California",
+  zipcode: 95078
+
 )
 
 Ad.create!(
@@ -164,7 +212,12 @@ Ad.create!(
   price: 9.82,
   category_id: 2,
   user_id: 1,
-  quantity: 2
+  quantity: 2,
+  address: "19384 Haylan Drive",
+  city: "San Jose",
+  state: "California",
+  zipcode: 95078
+
 )
 
 Ad.create!(
@@ -174,7 +227,12 @@ Ad.create!(
   category_id: 8,
   user_id: 1,
   published: "published",
-  quantity: 1
+  quantity: 1,
+  address: "19384 Haylan Drive",
+  city: "San Jose",
+  state: "California",
+  zipcode: 95078
+
 )
 
 Ad.create!(
@@ -184,7 +242,12 @@ Ad.create!(
   category_id: 11,
   user_id: 1,
   published: "published",
-  quantity: 2
+  quantity: 2,
+  address: "19384 Haylan Drive",
+  city: "San Jose",
+  state: "California",
+  zipcode: 95078
+
 )
 
 

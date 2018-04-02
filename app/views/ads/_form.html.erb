@@ -47,6 +47,36 @@
         <%= form.label :quantity %>
         <%= form.select :quantity, options_for_select([1,2,3,4,5,6,7,8,9,10], @ad.quantity), class: "form-control" %>
       </div>
+
+      <div class="ad-address-container">
+        <h5>Address</h5>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= form.label :street %>
+              <%= form.text_field :street, id: :ad_street, class: "form-control" %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <%= form.label :city %>
+            <%= form.text_field :city, id: :ad_city, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= form.label :state %>
+              <%= form.text_field :state, id: :ad_state, class: "form-control" %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <%= form.label :zipcode %>
+            <%= form.text_field :zipcode, id: :zipcode, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
   <br>
