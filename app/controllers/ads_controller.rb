@@ -29,7 +29,12 @@ class AdsController < ApplicationController
     #        -> redirects the now logged in user to the new_order view with the ad item that they want to purchase
     # This allows non-users to view ads yet still requires them to log into an account to purchase ad items
     @ad = Ad.find(params[:ad_id])
-    redirect_to new_order_path(:ad_id => @ad.id )
+    if current_user.id == @ad.user_id
+      puts "you may not buy your own items"
+      redirect_to ads_path
+    else
+      redirect_to new_order_path(:ad_id => @ad.id )
+    end
   end
 
   # GET /ads/1
