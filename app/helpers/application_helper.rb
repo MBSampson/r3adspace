@@ -26,4 +26,12 @@ module ApplicationHelper
     end
   end
 
+  def display_nav_brand_image(user)
+    if user_signed_in? && user.avatar_file_name != nil
+      image_tag user.avatar, class: "nav-brand-img"
+    else
+      image_tag 'logo-icon.png', class: "nav-brand-img"
+    end
+  end
+
 end
