@@ -1,6 +1,7 @@
 <div class="filter-content">
   <button onclick="showFilterContainer()" class="btn btn-light btn-dark btn-block" id="show-filter-btn">Show Filters</button>
   <div id="filter-items-container">
+    <%= link_to "All", '#', class: "filter-item" %>
     <% @categories.each do |category| %>
       <%= link_to category.name, ads_category_filter_path(:category => category.id), class: "filter-item" %>
     <% end %>

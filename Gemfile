@@ -75,3 +75,6 @@ gem 'aws-sdk-s3', '~> 1.8', '>= 1.8.2'
 
 # Use Kaminari to handle pagination
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
+
+# Use Faker for randomized seed data
+gem 'faker', '~> 1.8', '>= 1.8.7'
