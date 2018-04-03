@@ -72,3 +72,6 @@ gem 'figaro'
 # Use to store images when deployed on Heroku
 gem 'aws-sdk', '< 2.0'
 gem 'aws-sdk-s3', '~> 1.8', '>= 1.8.2'
+
+# Use Kaminari to handle pagination
+gem 'kaminari', '~> 1.1', '>= 1.1.1'

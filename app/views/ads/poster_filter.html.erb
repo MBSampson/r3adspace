@@ -1,6 +1,6 @@
 <div class="container-fluid">
-  <div class="container">
-    <div class="row poster-container">
+  <div class="container poster-container">
+    <div class="row">
       <div class="col-lg-12">
         <!--  Handle when a user has no Ads -->
         <% if @ads.count == 0 %>
@@ -12,6 +12,9 @@
           <%= render 'show_ad_content' %>
         <% end %>
       </div>
+    </div>
+    <div class="ad-pagination-container">
+      <%= paginate @ads %>
     </div>
   </div>
 </div>
