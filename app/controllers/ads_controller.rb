@@ -8,12 +8,12 @@ class AdsController < ApplicationController
   # GET /ads
   # GET /ads.json
   def index
-    @ads = Ad.page(params[:page]).per(5).where(published: "published", sold: false)
+    @ads = Ad.page(params[:page]).per(15).where(published: "published", sold: false)
     @page = __method__.to_s
   end
 
   def category_filter
-    @ads = Ad.page(params[:page]).per(5).where(category_id: params[:category_id], published: "published", sold: false)
+    @ads = Ad.page(params[:page]).per(15).where(category_id: params[:category_id], published: "published", sold: false)
     @category = Category.find(params[:category_id])
     @page = __method__.to_s
   end
@@ -21,10 +21,10 @@ class AdsController < ApplicationController
   # Filters by the ad's poster
   def poster_filter
     if params[:category_id] == nil
-      @ads = Ad.page(params[:page]).per(5).where(user_id: params[:poster]).order(sold: :desc)
+      @ads = Ad.page(params[:page]).per(15).where(user_id: params[:poster]).order(sold: :desc)
       @page = __method__.to_s
     else
-      @ads = Ad.page(params[:page]).per(5).where(user_id: params[:poster], category_id: params[:category_id])
+      @ads = Ad.page(params[:page]).per(15).where(user_id: params[:poster], category_id: params[:category_id])
       @page = __method__.to_s
     end
   end
