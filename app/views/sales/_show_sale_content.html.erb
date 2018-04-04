@@ -1,0 +1,18 @@
+<% @sales.each do |sale| %>
+  <div class="col-md-3">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= sale.ad_title %> Sale</h5>
+          <h6 class="card-cubtitle mb-2 text-muted"><%= sale.created_at.strftime("%B %d, %Y") %> at <%= sale.created_at.strftime("%r")%></h6>
+        </div>
+      </div>
+  </div>
+<% end %>
+
+
+
+  <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <a href="#" class="card-link">Card link</a>
+  <a href="#" class="card-link">Another link</a>
+</div>
+</div> -->

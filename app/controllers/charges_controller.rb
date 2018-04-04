@@ -32,8 +32,21 @@ class ChargesController < ApplicationController
     @order.cost = @amount
     @order.save
 
-    create_sale
-    byebug
+    # Create Sale entry for the order
+    sale_hash = {
+      :buyer_first_name => @order.buyer_first_name,
+      :buyer_last_name => @order.buyer_last_name,
+      :ad_title => @ad.title,
+      :total_amount => (@ad.price.to_f * @order.item_quantity.to_f),
+      :item_quantity => @order.item_quantity,
+      :shipping_street => @order.address,
+      :shipping_city => @order.city,
+      :shipping_state => @order.state,
+      :shipping_zipcode => @order.zipcode,
+      :user_id => @user.id
+    }
+    @sale = Sale.new(sale_hash)
+    @sale.save
 
     PurchaseMailer.new_purchase(@ad, @order).deliver_now
 
@@ -55,23 +68,6 @@ class ChargesController < ApplicationController
 
     def set_current_user
       @user = current_user
-    end
-
-    def create_sale
-      # Create Sale entry for the order
-      sale_hash = {
-        :buyer_first_name => @order.buyer_first_name,
-        :buyer_last_name => @order.buyer_last_name,
-        :ad_title => @ad.title,
-        :total_amount => (@ad.price.to_f * @order.item_quantity.to_f),
-        :item_quantity => @order.item_quantity,
-        :shipping_street => @order.address,
-        :shipping_city => @order.city,
-        :shipping_state => @order.state,
-        :shipping_zipcode => @order.zipcode
-      }
-      @sale = Sale.new(sale_hash)
-      @sale.save
     end
 
 end

@@ -5,8 +5,8 @@ class AdsController < ApplicationController
   before_action :authenticate_user!, only: [:poster_filter, :edit, :new, :create, :update, :buy_ad]
   before_action :set_current_user
 
-  # GET /ads
-  # GET /ads.json
+
+
   def index
     @ads = Ad.page(params[:page]).per(15).where(published: "published", sold: false)
     @page = __method__.to_s
@@ -29,11 +29,8 @@ class AdsController < ApplicationController
     end
   end
 
+
   def buy_ad
-    # Buy_ad -> requires authenticated user (redirects to new session if no user is found)
-    #        -> redirects the now logged in user to the new_order view with the ad item that they want to purchase
-    #
-    # *** Appends the authenticate_user before_action here instead of in the :show action. This allows users to visit the ad#show page without loggin in. ***
     @ad = Ad.find(params[:ad_id])
     if current_user.id == @ad.user_id
       flash[:notice] = "You may not buy your own items."
@@ -43,12 +40,12 @@ class AdsController < ApplicationController
     end
   end
 
-  # GET /ads/1
-  # GET /ads/1.json
+
   def show
     @form_type = 'show'
     @page = __method__.to_s
   end
+
 
   def toggle_published
     if @ad.published == "published"
@@ -60,20 +57,19 @@ class AdsController < ApplicationController
     end
   end
 
-  # GET /ads/new
+
   def new
     @ad = Ad.new
     @form_type = 'new'
   end
 
-  # GET /ads/1/edit
+
   def edit
     @form_type = 'edit'
     @page = __method__.to_s
   end
 
-  # POST /ads
-  # POST /ads.json
+
   def create
     @ad = Ad.new(ad_params)
     @form_type = 'new'
@@ -90,8 +86,7 @@ class AdsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /ads/1
-  # PATCH/PUT /ads/1.json
+
   def update
     @form_type = 'edit'
     respond_to do |format|
@@ -105,8 +100,8 @@ class AdsController < ApplicationController
     end
   end
 
-  # DELETE /ads/1
-  # DELETE /ads/1.json
+
+
   def destroy
     @ad.destroy
     respond_to do |format|

@@ -1,6 +1,6 @@
 class SalesController < ApplicationController
   before_action :set_sale, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:new]
+  before_action :set_user, only: [:new, :index, :show]
 
   # GET /sales
   # GET /sales.json
@@ -16,7 +16,6 @@ class SalesController < ApplicationController
   # GET /sales/new
   def new
     @sale = Sale.new
-    byebug
   end
 
   # GET /sales/1/edit
