@@ -4,6 +4,7 @@ class ChargesController < ApplicationController
   before_action :set_order, only: [:new, :create]
 
   def new
+    byebug
   end
 
   def create

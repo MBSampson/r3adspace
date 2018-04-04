@@ -37,7 +37,10 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.user = current_user
+    @order.buyer_last_name = params[:buyer_last_name]
+    @order.buyer_first_name = params[:buyer_first_name]
     @ad = Ad.find(params[:ad_id])
+    byebug
 
     respond_to do |format|
       if @order.save
