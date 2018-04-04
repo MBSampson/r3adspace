@@ -2,7 +2,7 @@
 
 <h5>Buyer Delivery Info</h5>
 <div style="padding: 10px; border: 1px solid black;">
-  <p><%= @ad.user.first_name + " " + @ad.user.last_name %></p>
+  <p><%= @order.buyer_first_name + " " + @order.buyer_last_name %></p>
   <p><%= @order.address %></p>
   <p><%= @order.city + " " + @order.state + ", " + @order.zipcode.to_s %></p>
 </div>
