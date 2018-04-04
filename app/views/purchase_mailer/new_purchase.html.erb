@@ -8,4 +8,6 @@
   <p style="color: white; background-color: #0099CC; padding: 5px;">Order Details</p>
   <p>Item Qty: <%= @order.item_quantity %></p>
   <p>Order Creation Date: <%= @order.created_at.strftime("%B %d, %Y") %> at <%= @order.created_at.strftime("%r")%>.</p>
+  <br>
+  <p><strong>Amount: <%= number_to_currency(@ad.price * @order.item_quantity) %></strong></p>
 </div>

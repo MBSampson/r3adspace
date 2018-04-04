@@ -4,12 +4,14 @@ class ChargesController < ApplicationController
   before_action :set_order, only: [:new, :create]
 
   def new
+    byebug
   end
 
   def create
     # Amount in cents
-    @amount = (@ad.price.to_f * 100).to_i
+    @amount = ((@ad.price.to_f * 100) * @order.item_quantity.to_f).to_i
 
+    byebug
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -30,7 +32,10 @@ class ChargesController < ApplicationController
     @ad.save
 
     @order.completed = true
+    @order.cost = @amount
     @order.save
+
+    byebug
 
     PurchaseMailer.new_purchase(@ad, @order).deliver_now
 
