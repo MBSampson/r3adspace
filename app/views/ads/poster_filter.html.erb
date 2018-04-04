@@ -1,17 +1,22 @@
 <div class="container-fluid">
   <div class="container poster-container">
     <div class="row">
-      <div class="col-lg-12">
-        <!--  Handle when a user has no Ads -->
-        <% if @ads.count == 0 %>
+      <!--  Handle when a user has no Ads -->
+      <% if @ads.count == 0 %>
+        <div class="col-lg-12">
           <div class="no-content-container">
             <h3>You have no listed ads</h3>
             <p>Want to create an ad? Click <%= link_to "here", new_ad_path %>.</p>
           </div>
-        <% else %>
+        </div>
+      <% else %>
+        <div class="col-lg-2">
+          <%= render 'show_filter_content' %>
+        </div>
+        <div class="col-lg-10">
           <%= render 'show_ad_content' %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
     <div class="ad-pagination-container">
       <%= paginate @ads %>

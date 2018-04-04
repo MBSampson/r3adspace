@@ -1,6 +1,6 @@
 class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :edit, :update, :destroy, :toggle_published]
-  before_action :set_categories, only: [:index, :category_filter]
+  before_action :set_categories, only: [:index, :category_filter, :poster_filter]
   before_action :set_users, only: [:poster_filter]
   before_action :authenticate_user!, only: [:poster_filter, :edit, :new, :create, :update, :buy_ad]
   before_action :set_current_user
@@ -13,15 +13,20 @@ class AdsController < ApplicationController
   end
 
   def category_filter
-    @ads = Ad.page(params[:page]).per(5).where(category_id: params[:category], published: "published", sold: false)
-    @category = Category.find(params[:category])
+    @ads = Ad.page(params[:page]).per(5).where(category_id: params[:category_id], published: "published", sold: false)
+    @category = Category.find(params[:category_id])
     @page = __method__.to_s
   end
 
   # Filters by the ad's poster
   def poster_filter
-    @ads = Ad.page(params[:page]).per(5).where(user_id: params[:poster]).order(sold: :desc)
-    @page = __method__.to_s
+    if params[:category_id] == nil
+      @ads = Ad.page(params[:page]).per(5).where(user_id: params[:poster]).order(sold: :desc)
+      @page = __method__.to_s
+    else
+      @ads = Ad.page(params[:page]).per(5).where(user_id: params[:poster], category_id: params[:category_id])
+      @page = __method__.to_s
+    end
   end
 
   def buy_ad
