@@ -20,6 +20,7 @@
           <h5 class="card-title"><%= @ad.title %></h5>
           <p class="card-text"><%= truncate(@ad.description, :length => 80) %></p>
         </div>
+        <%= content_tag :span, "$" + @ad.price.to_s + " per item", class: "item-price-container mt-auto" %>
       </div>
     </div>
     <div class="col-md-8 order-address-container">
@@ -44,7 +45,7 @@
       </div>
 
       <div class="form-group">
-        <%= form.label :item_quantity %>
+        <%= form.label "Quantity" %>
         <%= select_tag "order[item_quantity]", options_for_select(@quantity_arr, @ad.quantity) %>
       </div>
     </div>
