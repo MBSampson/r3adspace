@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :ads
   has_many :orders
+  has_many :sales
 
   # Configure for Paperclip
   has_attached_file :avatar, styles:
@@ -10,7 +11,7 @@ class User < ApplicationRecord
     medium: "300x300>",
     thumb: "100x100>"
   }, default_url: "/images/:style/missing.png"
-  
+
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   devise :database_authenticatable, :registerable,
