@@ -1,10 +1,5 @@
 class PurchaseMailer < ApplicationMailer
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.purchase_mailer.new_purchase.subject
-  #
   def new_purchase(ad, order)
     @ad = ad
     @order = order

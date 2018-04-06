@@ -1,1 +1,13 @@
-<h1>SALE SHIPPED EMAIL</h1>
+<p>Test</p>
+
+<div style="padding: 10px;">
+  <h3>Your order from <i><%= @sale.ad_title %> has been shipped!</h3>
+  <br>
+  <p style="color: white; background-color: #0099CC; padding: 5px;">Order Details</p>
+  <p><%= @sale.user.first_name + " " + @sale.user.last_name %> has shipped your items to: </p>
+  <p><%= @sale.shipping_street %> <%= @sale.shipping_city %>, <%= @sale.shipping_state %> <%= @sale.shipping_zipcode %> </p>
+  <br>
+  <p>Item Quantity: <%= @sale.item_quantity %> </p>
+  <br>
+  <p>Having problems? Contact your seller via email: <%= @sale.user.email %>.</p>
+</div>
