@@ -2,7 +2,12 @@
   <div class="container sale-content-container">
     <h4 class="sale-main-header-text">Sale Log</h4>
     <div class="row">
-      <%= render 'show_sale_content' %>
+      <% if Sale.count != 0 %>
+        <%= render 'show_sale_content' %>
+      <% else %>
+        <!-- DISPLAY NO SALES CONTENT -->
+        <p>No content</p>
+      <% end %>
     </div>
   </div>
 </div>
