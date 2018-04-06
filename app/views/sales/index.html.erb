@@ -2,11 +2,13 @@
   <div class="container sale-content-container">
     <h4 class="sale-main-header-text">Sale Log</h4>
     <div class="row">
-      <% if Sale.count != 0 %>
+      <% if @sales.count != 0 %>
         <%= render 'show_sale_content' %>
       <% else %>
-        <!-- DISPLAY NO SALES CONTENT -->
-        <p>No content</p>
+      <div class="no-content-container bg-light">
+        <h4>You have no sale items.</h4>
+        <%= link_to 'Return to home page', ads_path, class: "text-dark" %>
+      </div>
       <% end %>
     </div>
   </div>

@@ -33,9 +33,8 @@
           </div>
           <br>
           <% if sale.shipped %>
-            <!-- Production
-              <span class="shipped-btn">Shipped</span> -->
-            <%= link_to "Toggle Shipped", ship_order_sale_path(sale.id), class: "btn btn-block btn-info" %>
+              <%= link_to "Shipped", sale, class: "shipped-btn" %>
+              <!--  STYLE ACTIVE AND HOVER STYLES -->
           <% else %>
             <%= link_to "Ship Order", ship_order_sale_path(sale.id), class: "btn btn-block btn-info" %>
           <% end %>
