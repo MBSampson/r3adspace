@@ -8,10 +8,7 @@ class PurchaseMailer < ApplicationMailer
 
   def shipped_order(sale)
     @sale = sale
-    # production
-    # mail to: sale.buyer_email
 
-    # dev test
     mail to: "mbsampson89@gmail.com"
   end
 end
