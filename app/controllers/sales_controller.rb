@@ -1,5 +1,5 @@
 class SalesController < ApplicationController
-  before_action :set_sale, only: [:show, :edit, :update, :destroy]
+  before_action :set_sale, only: [:show, :edit, :ship_order, :update, :destroy]
   before_action :set_user, only: [:new, :index, :show]
 
   # GET /sales
@@ -16,6 +16,25 @@ class SalesController < ApplicationController
   # GET /sales/new
   def new
     @sale = Sale.new
+  end
+
+  def ship_order
+    # Production
+    # @sale.update!(shipped: true)
+    # flash[:notice] = "Your sale is now marked as shipped!"
+    # redirect_to sales_url
+
+    # Development method
+    if @sale.shipped
+      flash[:notice] = "SHIPPED TOGGLED"
+      @sale.update!(shipped: false)
+      redirect_to sales_url
+    else
+      flash[:notice] = "Your sale is now marked as shipped!"
+      @sale.update!(shipped: true)
+      redirect_to sales_url
+    end
+    # end development method 
   end
 
   # GET /sales/1/edit

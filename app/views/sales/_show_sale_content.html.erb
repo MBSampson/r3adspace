@@ -1,9 +1,13 @@
 <% @sales.each do |sale| %>
   <div class="col-md-4">
+    <% if sale.shipped %>
+      <div class="shipped-sale-card">
+    <% else %>
       <div class="card sale-card">
+    <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= link_to sale.ad_title, sale, class: "text-dark sale-card-title" %></h5>
-          <h6 class="card-cubtitle mb-2 text-muted"><%= sale.created_at.strftime("%B %d, %Y") %> at <%= sale.created_at.strftime("%r")%></h6>
+          <h6 class="card-subtitle mb-2 text-muted"><%= sale.created_at.strftime("%B %d, %Y") %> at <%= sale.created_at.strftime("%r")%></h6>
           <hr>
           <br>
           <p class="card-text"><%= sale.buyer_first_name %> <%= sale.buyer_last_name %></p>
@@ -17,13 +21,24 @@
               <%= sale.item_quantity %>
             </span>
             <span class="sale-card-block">
+              Price
+              <hr>
+              $<%= sale.price %>
+            </span>
+            <span class="sale-card-block">
               Total
               <hr>
               $<%= sale.total_amount %>
             </span>
           </div>
           <br>
-          <%= link_to "Ship Order", '#', class: "sale-ship-btn btn btn-block btn-success" %>
+          <% if sale.shipped %>
+            <!-- Production
+              <span class="shipped-btn">Shipped</span> -->
+            <%= link_to "Toggle Shipped", ship_order_sale_path(sale.id), class: "btn btn-block btn-info" %>
+          <% else %>
+            <%= link_to "Ship Order", ship_order_sale_path(sale.id), class: "btn btn-block btn-info" %>
+          <% end %>
       </div>
     </div>
   </div>

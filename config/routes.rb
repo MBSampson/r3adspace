@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :sales
+
+  resources :sales do
+    member do
+      get :ship_order
+    end
+  end
+
   resources :orders
   devise_for :users, :controllers => {:registrations => "users/registrations", :sessions => "users/sessions"}
 
