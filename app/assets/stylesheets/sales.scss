@@ -11,6 +11,11 @@
 
 .sale-card {
   width: 100%;
+
+  .sale-card-title {
+    font-size: 1.1em;
+    text-decoration: underline;
+  }
 }
 
 .sale-block-container{
@@ -19,22 +24,14 @@
   .sale-card-block {
     display: inline-block;
     width: 49.45%;
-    height: 25px;
     text-align: center;
     padding-top: 3px;
     border-radius: 5px;
-  }
-
-  .sale-card-block:nth-child(1){
     background-color: #263238;
-  }
 
-  .sale-card-block:nth-child(2){
-    background-color: #37474F;
+    hr {
+      border-top: 1px solid white;
+      margin: 0;
+    }
   }
-
-  .sale-card-block:nth-child(3){
-    background-color: #4B515D;
-  }
-
 }
