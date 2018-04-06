@@ -6,14 +6,17 @@ class PurchaseMailer < ApplicationMailer
   #   en.purchase_mailer.new_purchase.subject
   #
   def new_purchase(ad, order)
-    # mail to: ad.user.email
     @ad = ad
     @order = order
     mail to: ad.user.email
   end
 
-  def shipped_order()
+  def shipped_order(sale)
+    @sale = sale
+    # production
+    # mail to: sale.buyer_email
 
-
+    # dev test
+    mail to: "mbsampson89@gmail.com"
   end
 end

@@ -38,6 +38,7 @@ class SalesController < ApplicationController
     else
       flash[:notice] = "Your sale is now marked as shipped!"
       @sale.update!(shipped: true)
+      PurchaseMailer.shipped_order(@sale).deliver_now
       redirect_to sales_url(:user_id => @user.id)
     end
     # end development method
