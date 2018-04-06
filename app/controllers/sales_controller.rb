@@ -1,13 +1,13 @@
 class SalesController < ApplicationController
-  before_action :set_sale, only: [:show, :edit, :ship_order, :update, :destroy]
-  before_action :set_user, only: [:new, :index, :show, :ship_order]
+  before_action :set_sale, only: [:edit, :ship_order, :update, :destroy]
+  before_action :set_user, only: [:new, :index, :ship_order]
   before_action :authenticate_user!
 
   # GET /sales
   # GET /sales.json
   def index
     @sales = Sale.where(user_id: params[:user_id])
-   
+
     if current_user.id != params[:user_id].to_i
       flash[:notice] = "You do not have access to this page."
       redirect_to ads_url
@@ -17,10 +17,6 @@ class SalesController < ApplicationController
   # GET /sales/1
   # GET /sales/1.json
   def show
-    if current_user.id != @sale.user_id
-      flash[:notice] = "You do not have access to this page."
-      redirect_to ads_url
-    end
   end
 
   # GET /sales/new

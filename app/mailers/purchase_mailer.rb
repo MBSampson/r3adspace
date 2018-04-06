@@ -7,8 +7,13 @@ class PurchaseMailer < ApplicationMailer
   #
   def new_purchase(ad, order)
     # mail to: ad.user.email
-    @ad = ad 
+    @ad = ad
     @order = order
     mail to: ad.user.email
+  end
+
+  def shipped_order()
+
+
   end
 end

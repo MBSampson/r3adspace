@@ -67,7 +67,9 @@ class ChargesController < ApplicationController
         :shipping_state => @order.state,
         :shipping_zipcode => @order.zipcode,
         :user_id => @ad.user_id,
-        :price => @ad.price
+        :price => @ad.price,
+        :buyer_email => @user.email
+
       }
       @sale = Sale.new(sale_hash)
       @sale.save

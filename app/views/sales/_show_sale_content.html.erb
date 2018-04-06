@@ -6,13 +6,18 @@
       <div class="card sale-card">
     <% end %>
         <div class="card-body">
-          <h5 class="card-title"><%= link_to sale.ad_title, sale, class: "text-dark sale-card-title" %></h5>
+          <h5 class="card-title text-dark sale-card-title"><%= sale.ad_title %></h5>
           <h6 class="card-subtitle mb-2 text-muted"><%= sale.created_at.strftime("%B %d, %Y") %> at <%= sale.created_at.strftime("%r")%></h6>
           <hr>
           <br>
-          <p class="card-text"><%= sale.buyer_first_name %> <%= sale.buyer_last_name %></p>
+          <p class="sale-card-subtitle">Address</p>
           <p class="card-text"><%= sale.shipping_street %> <%= sale.shipping_city %></p>
           <p class="card-text"><%= sale.shipping_state %> <%= sale.shipping_zipcode %></p>
+          <hr>
+          <br>
+          <p class="sale-card-subtitle">Buyer Information</p>
+          <p class="card-text"><%= sale.buyer_first_name %> <%= sale.buyer_last_name %></p>
+          <p class="card-text"><%= sale.buyer_email %></p>
           <br>
           <div class="sale-block-container">
             <span class="sale-card-block">

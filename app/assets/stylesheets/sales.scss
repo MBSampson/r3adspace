@@ -18,8 +18,14 @@
   width: 100%;
 
   .sale-card-title{
-    font-size: 1.1em;
+    font-size: 1.3em;
     text-decoration: underline;
+  }
+
+  .sale-card-subtitle{
+    font-size: 1.05em;
+    text-decoration: underline;;
+    font-weight: bold;
   }
 }
 
@@ -41,7 +47,7 @@
   color: white;
 }
 
-.sale-card-block, .sale-show-card-block {
+.sale-card-block {
   display: inline-block;
   width: 30%;
   text-align: center;
