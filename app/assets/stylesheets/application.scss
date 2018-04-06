@@ -69,6 +69,23 @@ a.btn.btn-success.buy-btn{
 
 /******   NAV STYLES  ******/
 
+#ads-dropdown-item {
+  padding: 0 15px;
+  text-decoration: underline;
+}
+
+.dropdown-menu.show {
+  background-color: #343a40;
+  border: 1px solid white;
+  text-align: center;
+  font-weight: 600;
+
+  a.text-light:hover, a.text-light:focus {
+    background-color: #343a40;
+    text-decoration: underline;    
+  }
+}
+
 .navbar {
   padding: 2.5em;
 }

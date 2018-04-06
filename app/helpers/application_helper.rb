@@ -16,7 +16,10 @@ module ApplicationHelper
 
   def display_nav_items_helper
     if user_signed_in?
-      (link_to "My Ads", ads_poster_filter_path(:poster => @user.id), class: 'nav-link') +
+      ('<li class="nav-item dropdown"><a class="nav-link" id="ads-dropdown-item" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Ads</a><div class="dropdown-menu" aria-labelledby="navbarDropdown">').html_safe +
+      (link_to "Sales", sales_url, class: 'dropdown-item text-light') +
+      (link_to "Ads", ads_poster_filter_path(:poster => @user.id), class: 'dropdown-item text-light') +
+      ('</div></li>').html_safe +
       (link_to "Profile", edit_user_registration_path, class: 'nav-link') +
       (link_to "New Ad", new_ad_path, class: 'nav-link') +
       (link_to "Logout", destroy_user_session_path, method: :delete, class: 'nav-link')
