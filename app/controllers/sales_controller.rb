@@ -6,7 +6,7 @@ class SalesController < ApplicationController
   # GET /sales
   # GET /sales.json
   def index
-    @sales = Sale.where(user_id: params[:user_id])
+    @sales = Sale.page(params[:page]).per(6).where(user_id: params[:user_id]).order(id: :desc)
 
     if current_user.id != params[:user_id].to_i
       flash[:notice] = "You do not have access to this page."

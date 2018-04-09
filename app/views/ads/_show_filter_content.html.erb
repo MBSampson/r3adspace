@@ -7,7 +7,7 @@
         <%= link_to category.name, ads_category_filter_path(:category_id => category.id), class: "filter-item" %>
       <% end %>
     <% else %>
-      <%= link_to 'All', ads_poster_filter_path, class: "filter-item" %>
+      <%= link_to 'All', ads_poster_filter_path(:poster => @user.id), class: "filter-item" %>
       <% @categories.each do |category| %>
         <%= link_to category.name, ads_poster_filter_path(:category_id => category.id, :poster => @user.id), class: "filter-item"  %>
       <% end %>

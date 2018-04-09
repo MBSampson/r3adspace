@@ -13,7 +13,7 @@ class AdsController < ApplicationController
   end
 
   def category_filter
-    @ads = Ad.page(params[:page]).per(15).where(category_id: params[:category_id], published: "published", sold: false)
+    @ads = Ad.page(params[:page]).per(15).where(category_id: params[:category_id], published: "published", sold: false).order(id: :desc)
     @category = Category.find(params[:category_id])
     @page = __method__.to_s
   end
@@ -24,7 +24,7 @@ class AdsController < ApplicationController
       @ads = Ad.page(params[:page]).per(15).where(user_id: params[:poster]).order(sold: :desc)
       @page = __method__.to_s
     else
-      @ads = Ad.page(params[:page]).per(15).where(user_id: params[:poster], category_id: params[:category_id])
+      @ads = Ad.page(params[:page]).per(15).where(user_id: params[:poster], category_id: params[:category_id]).order(id: :desc)
       @page = __method__.to_s
     end
   end
