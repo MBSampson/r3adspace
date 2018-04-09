@@ -1,1 +1,12 @@
-Shipped order text only email
+
+
+Your order from <%= @sale.ad_title %> has been shipped!
+Order created on: <%= @sale.created_at.strftime("%B %d, %Y") %> at <%= @sale.created_at.strftime("%r")%>
+
+Order Details
+<%= @sale.user.first_name + " " + @sale.user.last_name %> has shipped your items to:
+<%= @sale.shipping_street %> <%= @sale.shipping_city %>, <%= @sale.shipping_state %> <%= @sale.shipping_zipcode %>
+
+Item Quantity: <%= @sale.item_quantity %>
+Unit Price: <%= @sale.price %>
+Order Total: <%= @sale.total_amount %>

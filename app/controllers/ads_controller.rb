@@ -8,7 +8,7 @@ class AdsController < ApplicationController
 
 
   def index
-    @ads = Ad.page(params[:page]).per(15).where(published: "published", sold: false)
+    @ads = Ad.page(params[:page]).per(15).where(published: "published", sold: false).order(id: :desc)
     @page = __method__.to_s
   end
 

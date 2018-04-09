@@ -1,5 +1,11 @@
-A buyer was found for your ad: [AD]!
+Someone purchased an item from your ad: <%= @ad.title %>
 
-Buyer Info:
-full name
-delivery address
+Order Information
+Buyer: <%= @order.buyer_first_name + " " + @order.buyer_last_name %>
+Address:<%= @order.address %> <%= @order.city + " " + @order.state + ", " + @order.zipcode.to_s %>
+
+Order Details
+Item Qty: <%= @order.item_quantity %>
+Order Creation Date: <%= @order.created_at.strftime("%B %d, %Y") %> at <%= @order.created_at.strftime("%r")%>
+
+Amount: <%= number_to_currency(@ad.price * @order.item_quantity) %>
