@@ -4,7 +4,7 @@
     <br>
     <p><%= @ad.street %> <%= @ad.city %>, <%= @ad.state %> <%= @ad.zipcode %></p>
     <br>
-    <p><%= number_to_currency(@ad.price) %></p>
+    <p>Quantity: <%= @ad.quantity %> (<%= number_to_currency(@ad.price) %> per item)</p>
     <br>
     <p><%= simple_format(@ad.description) %></p>
     <br>
